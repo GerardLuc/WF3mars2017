@@ -1,0 +1,76 @@
+<!Doctype html> <!-- Declarer le Doctype -->
+
+<html> <!-- Ouvrir la balise html --> 
+
+    <!-- Configurer la page -->
+    <head>
+
+        <!-- Faire en sorte d'afficher les accents -->
+        <meta charset="UTF-8"/>
+
+        <!-- Ajouter un titre a la page -->
+        <title>Bonjour le monde</title>
+
+    </head>  
+
+    <!-- Ajouter du contenu dans la page -->
+    <body>
+
+          <!-- Les titres -->
+          <h1>Titre principal</h1> <!-- La balise H1 doit être unique sur la page -->
+          <h2>Sous-titre jusqu'à H6</h2>
+
+          <!-- Lien dans un nouvel onglet -->
+          <a href="http://www.google.fr" target="_blank">Google</a>
+          <!-- Lien vers le même onglet -->
+          <a href="about.html">A propos de moi</a>
+
+          <!-- Paragraphe -->
+          <p>Lorem ipsum dolor sit amet, <b>consectetur adipisicing elit.</b> Eligendi officia, enim quam ullam consectetur aliquid, neque, nostrum <i>veniam eius</i> similique impedit voluptatum illo accusamus. Eos eligendi aperiam, corporis laborum adipisci!</p>
+
+          <!-- Liste ordonnée -->  <!-- Ajouter du style -->
+          <ol style="background-color: #1010ef;" >
+              <li>Pierre</li>
+
+
+              <li>Paul</li>
+              <li><i>Mimichou</i></li>
+          </ol>
+
+          <!-- Liste non ordonée -->
+          <!-- Mosdifier la couleur du background -->
+          <ul style="background-color: #f70909;list-style-type: none;-webkit-padding-start:  15px;">
+              <li>Jhon</li>
+              <li><b>Paul</b></li>
+              <li>Georges</li>
+          </ul>
+
+          <!-- Image -->
+
+          <img src="img/Corbeau.jpg" alt="Photo d'un Corbeau">
+          <img src="img/Corbeau.jpg" alt="Photo d'un Corbeau">
+
+          <!-- Ajouter un formulaire -->
+          <!-- Modifier les propriétés du Background -->
+
+            <form action="/action_page.php" target="_blank" method="post" style="background-size: 100% 100%;background-image: url('http://img.src.ca/2011/12/02/635x357/111202_aw639_corbeau-tete_sn635.jpg');">
+             
+                <fieldset>
+                    <legend> Mike</legend>
+
+                    <!-- Centrer un element -->
+                    
+                    <p style=text-align:center>First name:<br>
+                    <input type="text" name="first name"></p>
+                    <p style=text-align:center>Last name:<br>
+                    <input  type="text" name="name"></p>
+                    <p style=text-align:center>Date:<br>
+                    <input type="date" name="date"></p>  
+                    <p style=text-align:center><input type="submit" name="valider" value="envoi"><p>
+                </fieldset>
+            </form>
+
+    </body>
+
+
+</html> <!-- Fermer la balise html-->
