@@ -2,6 +2,7 @@
 
 <html> <!-- Ouvrir la balise html --> 
 
+
     <!-- Configurer la page -->
     <head>
 
@@ -11,10 +12,47 @@
         <!-- Ajouter un titre a la page -->
         <title>Bonjour le monde</title>
 
+        <!-- Ajouter une boite de style -->
+        <style>
+
+            table{
+                border-collapse:collapse
+            }
+
+            th, td 
+            {
+            border: 1px dashed black;
+            border-collapse:collapse;
+            width: 50px;
+            height: 50px;
+            text-align:center;
+            font-family: 'Times New Roman', Times, serif
+            }
+
+            form{
+                background-size: 100% 100%
+            }
+
+
+            .Kappa{
+                text-align:center
+            }
+            .mike{
+                color:blue
+            }
+
+            #Notlikethis{
+                background-color: #1010ef
+            }
+            #Fappa{
+                background-color: #f70909;list-style-type: none;-webkit-padding-start:  15px
+            }
+        </style>
     </head>  
 
     <!-- Ajouter du contenu dans la page -->
     <body>
+
 
           <!-- Les titres -->
           <h1>Titre principal</h1> <!-- La balise H1 doit être unique sur la page -->
@@ -29,7 +67,7 @@
           <p>Lorem ipsum dolor sit amet, <b>consectetur adipisicing elit.</b> Eligendi officia, enim quam ullam consectetur aliquid, neque, nostrum <i>veniam eius</i> similique impedit voluptatum illo accusamus. Eos eligendi aperiam, corporis laborum adipisci!</p>
 
           <!-- Liste ordonnée -->  <!-- Ajouter du style -->
-          <ol style="background-color: #1010ef;" >
+          <ol id="Notlikethis" >
               <li>Pierre</li>
 
 
@@ -39,7 +77,7 @@
 
           <!-- Liste non ordonée -->
           <!-- Mosdifier la couleur du background -->
-          <ul style="background-color: #f70909;list-style-type: none;-webkit-padding-start:  15px;">
+          <ul id="Fappa">
               <li>Jhon</li>
               <li><b>Paul</b></li>
               <li>Georges</li>
@@ -50,27 +88,45 @@
           <img src="img/Corbeau.jpg" alt="Photo d'un Corbeau">
           <img src="img/Corbeau.jpg" alt="Photo d'un Corbeau">
 
-          <!-- Ajouter un formulaire -->
-          <!-- Modifier les propriétés du Background -->
+    <!-- Ajouter un tableau -->
+         <table>
+            <tbody><tr>
+                <th></th>
+                <th></th> 
+                <th></th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Mike</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>
+            </tbody>
+        </table>
+            <!-- Ajouter un formulaire -->
+            <!-- Modifier les propriétés du Background -->
 
-            <form action="/action_page.php" target="_blank" method="post" style="background-size: 100% 100%;background-image: url('http://img.src.ca/2011/12/02/635x357/111202_aw639_corbeau-tete_sn635.jpg');">
+            <form action="/action_page.php" target="_blank" method="post" style="background-image: url('http://img.src.ca/2011/12/02/635x357/111202_aw639_corbeau-tete_sn635.jpg');">
              
                 <fieldset>
                     <legend> Mike</legend>
 
                     <!-- Centrer un element -->
                     
-                    <p style=text-align:center>First name:<br>
+                    <p class="Kappa">First name:<br>
                     <input type="text" name="first name"></p>
-                    <p style=text-align:center>Last name:<br>
+                    <p class="Kappa">Last name:<br>
                     <input  type="text" name="name"></p>
-                    <p style=text-align:center>Date:<br>
+                    <p class="Kappa">Date:<br>
                     <input type="date" name="date"></p>  
-                    <p style=text-align:center><input type="submit" name="valider" value="envoi"><p>
+                    <p class="Kappa"><input type="submit" name="valider" value="envoi"><p>
                 </fieldset>
             </form>
 
     </body>
-
 
 </html> <!-- Fermer la balise html-->
