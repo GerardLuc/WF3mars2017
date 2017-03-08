@@ -1,0 +1,55 @@
+/* Selecteur logique: une balise html */
+
+/* faire en sorte que touts les textes de la page soient centrés */
+body{
+    text-align: center;
+}
+
+
+/* Selectionner la balise h2 */
+h2, h3{
+    /* changer la couleur de la Font */
+    color: red
+}
+
+/* Selectioner les balises a */
+a{
+    /* Supprimer le soulignement */
+    text-decoration: none; 
+}
+
+/* selecteurs imbriqués */
+h2 b{
+    color: green
+}
+
+.redBackground h2{
+    color: white
+}
+
+/* Selecteurs par classe */
+
+    /* Selectionner la classe redBackground*/
+    .redBackground{
+        /* modifier la couleur de fond */
+        background-color: red
+    }
+
+
+/* Selecteurs par id */
+    #bigTitle{
+        /* Modifier la taille de la font */
+        font-size: 3rem;
+    }
+
+/* Id prioritaire sur classe, prioritaire sur selecteur logique */
+
+/* selecteur d'inteeraction(etat) */
+    /* changer la couleur des balises au survol */
+    a:hover{
+        color: red
+    }
+
+    .redBackground:hover{  
+        background-color: lightgrey
+    }

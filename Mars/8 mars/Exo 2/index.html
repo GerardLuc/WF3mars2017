@@ -8,16 +8,8 @@
         
         title="EX01 - 8 mars"> 
 
-        <!-- Ajouter du style dans la balise head -->
-        <style>
-
-        h2{
-            color: red;
-        }
-       
-
-            
-        </style>
+        <!-- Integrer la feuille de style CSS -->
+        <link rel="stylesheet" href="CSS/style.css">
 
     </head>
 
@@ -32,11 +24,11 @@
             <nav>
                 <ul>
                     <!-- ajouter du CSS en ligne -->
-                    <li><a href="#" style="color: red">Accueil</a></li>
-                    <li><a href="#" style="color: red">A propos</a></li>
-                    <li><a href="#" style="color: red">PortFolio</a></li>
-                    <li><a href="#" style="color: red">Contact</a></li>
-                    <li><a href="#" style="color: red">Profil GitHub</a></li>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">A propos</a></li>
+                    <li><a href="#">PortFolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Profil GitHub</a></li>
                 </ul>
             </nav>
 
@@ -46,12 +38,12 @@
         <main>
 
             <!-- Créer une zone -->
-            <section>
-                <h2>A propos de Luc Gérard</h2>
+            <section  class="redBackground">
+                <h2 id="bigTitle">A propos de <b>Luc Gérard</b></h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat provident beatae fugit voluptatibus, dolores molestiae in dicta mollitia quam temporibus alias animi nam, dolorum? Neque ipsa, ab dolorum iusto quam!</p>
             </section>
             <section>
-                <h2>PortFolio de Luc Gérard</h2>
+                <h2 id="portfolioTitle">PortFolio de <b>Luc Gérard</b></h2>
                 <p>Cliquez sur un des projets ci-dessous</p>
 
                 <!-- Créer 3 sous sections -->
@@ -71,14 +63,14 @@
 
             <!-- Créer une zone -->
             <section>
-                <h2>Contacter Luc Gérard</h2>
+                <h2>Contacter <b>Luc Gérard</b></h2>
                 <p>Vous pouvez envoyer un e-mail en cliquant sur cette adresse: <a href="#">lucgerard10@gmail.com</a></p>
             </section>
 
         </main>
 
         <!-- Fermeture de la page -->
-        <footer>
+        <footer class="redBackground">
 
             <p>Under MIT License</p>
         </footer>
