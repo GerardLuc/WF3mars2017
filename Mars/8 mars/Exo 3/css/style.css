@@ -58,3 +58,64 @@ Style reset
             /* Centrer une balise de type block réduite en largeur */
             margin: 2rem auto;
         }
+        section{
+            margin-bottom: 4rem
+        }
+
+        /* mise en forme typographique */
+
+        .presentation{
+
+            /* Modifier la police de la font */
+            font-family: "Arial", Helvetica, sans-serif;
+
+             /*Modifier la taille de la font */
+             font-size: 1.7rem;
+
+             /* modifier l'interlignage */
+             line-height: 2em;
+
+             /* modifier la graisse de la font */
+             font-weight: bold;
+
+              /* Ajouter une ombre portée à la font */
+              text-shadow: .5rem .5rem .5rem darkgrey;
+
+              /* Modifier la casse de la font */
+              text-transform: uppercase;
+
+              /* modifier le style de la font */
+              font-style: italic;
+
+              text-decoration: underline;
+
+              /* Modifier la couleur de la font */
+              color: white;
+
+              padding: 2rem;
+              background-color: lightblue;
+              margin: 4rem auto;
+
+        }
+
+        /* Reference hexadécimale */
+
+        #portfolio{
+
+            background-color: #001dc1; /*reference hexadécimale*/
+            color: white; /* nom intelligible*/
+
+            text-align: center; /* Agis sur les textes et les balises inline */
+        }
+
+        #portfolio article{
+            /* utiliser rgba pour modifier l'opacité de la couleur */
+            background-color:rgba(255, 255, 255, 0.9);
+
+            color: #000;
+            padding: 2rem;
+            margin: 1rem;
+
+            /* Faire en sorte d'afficher les articles sur 3 colones */
+            display: inline-block;
+        }
