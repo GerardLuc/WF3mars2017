@@ -1,0 +1,73 @@
+/*
+Style reset 
+*/
+
+    /* Supprimer toutes les marges*/
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Faire en sorte que 1 rem fasse 10 px */
+
+    html{
+        font-size: 62.5%
+    }
+
+    body{
+        font-size: 1.5rem; /* => 15px */
+    }
+
+    /* supprimer la décoration des balises a */
+
+    a{
+        text-decoration: none;
+    }
+
+    /* Faire en sorte que les immages ne dépassent pas leur parrents */
+    img{
+        max-width: 100%;
+    }
+
+/*
+Style header
+*/
+
+    header{
+
+        /* Aligner le texte au centre */
+        text-align: center;
+
+        /* Changer la couleur du texte */
+        color: white;
+
+        /* Changer la couleur du background */
+        background-color: #18BC9C;
+    }
+
+    nav{
+        /* Mettre le texte en majuscules */
+        text-transform: uppercase;
+
+        background-color: #2c3e50;
+
+        text-align: left;
+    }
+
+    nav a{
+        /* Modifier la couleur du texte */
+        color: white;
+
+        font-weight: bold;
+
+    }
+
+ 
+    li{
+        /* Aligner les balises li*/
+        display: inline-block;
+        
+        /* Ajouter une marge a droite*/
+        margin-right: 1rem;
+    }
