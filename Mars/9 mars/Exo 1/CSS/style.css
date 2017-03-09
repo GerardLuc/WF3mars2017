@@ -48,6 +48,15 @@ Style reset
         font-size: 4rem;
     }
 
+/* tyle largeur maximum */
+
+    nav ul, #about p, #portfolio, #contacts, footer section{
+        /* Définir une largeur maximum */
+        max-width: 95rem;
+
+        /* Centrer une balise de type block dans son parent */
+        margin: auto;
+    }
 
 /*
 Style header
@@ -162,6 +171,7 @@ Style header
 
             /* justifier le texte */
             text-align: justify;
+
         }
 
         #about a{
@@ -175,6 +185,7 @@ Style header
             -webkit-border-radius: 0.6rem;
             -moz-border-radius: 0.6rem;
             border-radius: 0.6rem
+        
         }
 
 
