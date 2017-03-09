@@ -17,6 +17,9 @@ Style reset
 
     body{
         font-size: 1.5rem; /* => 15px */
+
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
     }
 
     /* supprimer la décoration des balises a */
@@ -29,6 +32,22 @@ Style reset
     img{
         max-width: 100%;
     }
+
+    section{
+        padding: 6rem 0rem;
+    }
+
+    h2{
+        text-align: center;
+
+        /* modifier la casse */
+        text-transform: uppercase;
+
+        margin-bottom: 3rem;
+
+        font-size: 4rem;
+    }
+
 
 /*
 Style header
@@ -44,6 +63,9 @@ Style header
 
         /* Changer la couleur du background */
         background-color: #18BC9C;
+
+        /* Ajouter une marge interieure */
+        padding-bottom: 6rem
     }
 
     nav{
@@ -53,6 +75,12 @@ Style header
         background-color: #2c3e50;
 
         text-align: left;
+
+        /* Ajouter une marge interieure */
+        padding: 2rem;
+
+
+        margin-bottom: 6rem;
     }
 
     nav a{
@@ -65,9 +93,176 @@ Style header
 
  
     li{
-        /* Aligner les balises li*/
+        /* Aligner les balises li */
         display: inline-block;
         
-        /* Ajouter une marge a droite*/
+        /* Ajouter une marge a droite */
         margin-right: 1rem;
+    }
+
+    h1{
+        /* mettre le texte en majuscule */
+        text-transform: uppercase;
+
+        font-size: 6rem;
+
+        padding-top: 3rem;
+
+        font-weight: bold
+    }
+
+    header p{
+        font-size: 2rem;
+    }
+
+/* style main */
+
+    /* PortFolio */
+
+        #portfolio a{
+            /* Masquer les balises */
+            display: none;
+        }
+
+        #portfolio article{
+
+            /* Créer 3 colones */
+            display: inline-block;
+
+            width: 29%;
+
+            padding: 1.5rem;
+        }
+
+        #portfolio{
+            text-align: center;
+        }
+
+
+    /* About */
+
+        #about{
+            background-color: #18BC9C;
+            color: snow;
+
+            text-align: center;
+            
+            font-size: 2rem;
+        }
+
+        #about p{
+
+            /* Afficher le texte sur deux colonnes */
+            -webkit-column-count: 2; /*chrome, Opéra, Safari */
+            -moz-column-count: 2; /* Firefox */
+
+            padding: 0rem 1.5rem;
+
+            margin-bottom: 4rem;
+
+            /* justifier le texte */
+            text-align: justify;
+        }
+
+        #about a{
+            
+            color: white;
+
+            border: 0.2rem solid white;
+
+            padding: 1rem 1rem;
+
+            -webkit-border-radius: 0.6rem;
+            -moz-border-radius: 0.6rem;
+            border-radius: 0.6rem
+        }
+
+
+    /* Contact */
+
+        input, textarea{
+            display: block;
+            width: 90%;
+
+            margin: 1rem auto;
+
+            padding: 1rem;
+
+            font-size: 2rem;
+
+            /* Annuler le style du navigateur */
+            border: none;
+
+            /* Refefinir la bordure */
+            border-bottom: 0.05rem solid lightgrey;
+        }
+
+        textarea{
+
+            /* Définir une hauteur min */
+            min-height: 20rem;
+
+            
+        }
+
+        form{
+            border-top: 0.05rem solid lightgrey;
+        }
+
+        /* Selectionner une balise grâce a son attribut et sa valeur */
+
+        [type="submit"]{
+
+            width: 10rem;
+
+            display: inline-block;
+
+            background-color: #18BC9C;
+
+            color: white;
+
+            font-weight: bold;
+
+            -webkit-border-radius: 0.6rem;
+            -moz-border-radius: 0.6rem;
+            border-radius: 0.6rem;
+
+            margin: 0rem 3rem;
+
+        }
+
+/* Style footer */
+
+    footer{
+
+        color: white;
+        text-align: center;
+        background:#2c3e50
+    }
+
+    footer article{
+        display: inline-block;
+        width: 29%;
+        
+        /* gerer l'alignement vertical */
+
+        vertical-align: top;
+    }
+
+    h3{
+        font-size: 2.5rem;
+
+        text-transform: uppercase;
+
+        margin-bottom: 3rem;
+    }
+
+    /* Selectionner une balise grace a son attibut et sa valeur */
+    [href="https://www.google.com"]{
+        color: #18BC9C;
+    }
+
+    aside{
+        padding: 1.5rem;
+        background-color: #233140
     }
