@@ -1,6 +1,8 @@
 /* Importer un fichier css */
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 
+@import url(https://fonts.googleapis.com/css?family=Amatica+SC:400,700);
+
 /*
 Style reset 
 */
@@ -21,7 +23,8 @@ Style reset
     body{
         font-size: 1.5rem; /* => 15px */
 
-        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-family: 'Amatica SC', sans-serif;
+        font-weight: 400
 
     }
 
@@ -53,7 +56,13 @@ Style reset
 
 /* style largeur maximum */
 
-    nav ul, #about p, #portfolio, #contacts, footer section{
+/* Selectionner le premier enfant/ le Neme enfant/ le dernier enfant */
+
+    nav ul, 
+    main section:first-child, 
+    main section:nth-child(2) p, 
+    main section:last-child, 
+    footer section{
         /* Définir une largeur maximum */
         max-width: 95rem;
 
@@ -133,7 +142,7 @@ Style header
     }
 
     /* Sortir la balise du flux pour la repositionner précisément */
-    #firstWebsiteNav{
+    nav li:first-child{
         position: absolute;
         left: 0;
         font-size: 1.5em;
@@ -143,7 +152,7 @@ Style header
 
     /* PortFolio */
 
-        #portfolio article{
+        main section:first-child article{
 
             /* Créer 3 colones */
             display: inline-block;
@@ -157,7 +166,7 @@ Style header
         
         }
         
-        #portfolio a{
+        main section:first-child a{
             /* Masquer les balises */
             background: rgba(24,188,156,.9);
             color: white;
@@ -175,6 +184,10 @@ Style header
              /* Réduire l'opacité de la balise */
               opacity: 0;
 
+
+
+              
+
               /* Gérer une transition entre les etats de la balise */
 
               -webkit-transition: opacity 0.75s; /* For Safari 3.1 to 6.0 */
@@ -182,12 +195,12 @@ Style header
         }
 
         /* Modifier l'opaxité de la balise en hover */
-        #portfolio a:hover{
+        main section:first-child a:hover{
             opacity: 1;
 
         }
 
-        #portfolio{
+        main section:first-child{
             text-align: center;
         }
 
@@ -196,7 +209,7 @@ Style header
 
     /* About */
 
-        #about{
+        main section:nth-child(2){
             background-color: #18BC9C;
             color: snow;
 
@@ -205,7 +218,7 @@ Style header
             font-size: 2rem;
         }
 
-        #about p{
+        main section:nth-child(2) p{
 
             /* Afficher le texte sur deux colonnes */
             -webkit-column-count: 2; /*chrome, Opéra, Safari */
@@ -220,7 +233,7 @@ Style header
 
         }
 
-        #about a{
+        main section:nth-child(2) a{
             
             color: white;
 
