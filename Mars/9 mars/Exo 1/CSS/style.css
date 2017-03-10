@@ -277,3 +277,14 @@ Style header
         padding: 1.5rem;
         background-color: #233140
     }
+
+    i{
+        display: inline-block;
+
+        border: 0.2rem solid white;
+
+        padding: 1rem;  
+
+        border-radius: 50%;
+        
+    }

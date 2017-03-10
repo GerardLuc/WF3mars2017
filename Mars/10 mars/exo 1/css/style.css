@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0
+}
+
+
+section{
+    border: 0.1rem solid red;
+    height: 30rem;
+    width: 30rem;
+    margin: 10rem auto;
+
+    /* Bloquer les enfants dans leurs parrents */
+    position: relative;
+
+
+}
+
+article{
+    height: 5rem;
+    width: 5rem;
+    font-size: 3rem;
+    font-weight: bold;
+
+    /* Changer la position pour placer précisement les articles */
+    position: absolute;
+
+}
+
+#first{
+    background: green;
+
+    /* Placer l'article en bas a droite */
+    bottom: 0;
+    right: 0;
+}
+
+#second{
+
+    /*  Placer l'article en bas a gauche */
+    background: yellow;
+    left: 0;
+    bottom: 0;
+}
+
+#third{
+    /* Placer l'article en haut a droite */
+    background: red;
+    right: 0;
+    top: 0;
+}
+
+#fourth{
+    /* Placer k'article en haut a gauche */
+    background: blue;
+    left: 0;
+    top: 0;
+}
