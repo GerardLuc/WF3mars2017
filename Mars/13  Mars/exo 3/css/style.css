@@ -28,9 +28,6 @@ section{
     /* Effectuer une transistion sur toutes les pptés */
     transition: all 20s;
 
-    /* Modifier la courbe d'animation */
-    -webkit-transition-timing-function: cubic-bezier(0.15, -0.21, 0.92);
-    transition-timing-function: cubic-bezier(0.15, -0.21, 0.92);
 
     /* ajouter un délai avant la transition */
     -webkit-transition-delay: 1s;
@@ -58,5 +55,5 @@ li{
 li:hover{
     padding-left: 0;
     color: red;
-    border-left: 1rem solid red;
+    border-left: 0 solid red;
 }
