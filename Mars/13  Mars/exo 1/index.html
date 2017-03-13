@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<!--
+
+    -Créer un doc de base html5 
+    -Créer une ouverture de page
+    -Un titre principal
+    -Une navigation principale avec 4 liens
+        -Home
+        -About
+        -Contacts
+        -Facebook
+    -Créer une zone de contenu principal
+        -une section
+            -sous titre "About"
+            -une image
+            -un paragraphe
+        -Une section
+            -Sous titre "contacts
+            -Formulaire: "nom/email/message"
+    -Créer une fermeture de site
+        -under MIT licence
+
+-->
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>13 mars exercice 1</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+
+        <header>
+            <h1>Hello World</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>                
+            </nav>
+        </header>
+
+        <main>
+            <section>
+                <h2>About</h2>
+                <img src="img/Corbeau.JPG" alt="Corbeau">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia fugit accusamus deserunt architecto voluptatibus reiciendis totam. Sequi ea, cum, asperiores ab in quidem! Expedita molestiae ipsa, labore architecto, ipsam magnam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione non, tenetur rem possimus? Recusandae cupiditate ipsam, rerum, doloremque pariatur aliquid ex, optio dolore earum omnis dolor. Deleniti earum blanditiis totam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia ea id modi aut, necessitatibus facere in. Magnam maiores enim facere impedit, aliquam eveniet atque dolores laborum quas, sit, deserunt error.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta nisi, accusantium veniam qui libero eligendi facere voluptatem, quasi deserunt provident placeat dolor quae sint molestiae aliquam ducimus temporibus voluptatum ipsa.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, voluptatem necessitatibus repellat repellendus adipisci cupiditate officia dolorum quasi porro explicabo assumenda in architecto culpa voluptates saepe, nihil? Saepe, quod ut.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat aliquam id voluptatem unde, odio voluptates deleniti mollitia impedit ea doloremque placeat laborum debitis provident corporis? Nam modi pariatur possimus velit!</p>
+
+            </section>
+
+            <section>
+                <h2>Contacts</h2>
+
+                    <form action="#">
+
+                        <!-- Associer un label a un input-->
+                        <label for="userName">Nom:</label>
+                        <input type="text" id="userName">
+                        
+                        <label for="userEmail">Email</label>
+                        <input type="UserEmail" placeholder="Adresse mail valide">
+                        
+                        <label for="userMessage">Message</label>
+                        <textarea id="userMessage" placeholder="Min.5 caractères"></textarea>
+
+                        <input type="submit" value="Envoyer votre message">
+                    </form>
+                   
+            </section>
+        </main>
+
+       <footer>
+           Under MIT licence
+       </footer>
+        
+    </body>
+</html>

@@ -1,0 +1,71 @@
+/* Style reset */
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Configurer la valeur 1rem - 10px */
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        /* Ne JAMMAIS definir width et height: sur le body */
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+/* Style header */
+
+    header, main, footer{
+        width: 50rem;
+        padding: 2rem;
+        margin: 2rem  auto;
+    }
+
+      header{  
+        
+        background: lightgrey;
+        width: 50rem;
+
+        
+        position: relative
+    }
+
+    header li{
+        display: inline-block;
+    }
+
+    header li:first-child{
+        /* Sortir la balise du flux pour la repositionner*/
+        position: absolute;
+        right: 2rem;
+    }
+
+    header li:last-child{
+        position: absolute;
+        left: 2rem;
+    }
+
+/*style main */
+
+    /* Exclure de la selection les input de type submit */
+    label, input:not([type="submit"]), textarea{
+        display: block;
+        width: 100%;
+    }
+
+
+/* Style footer*/
+    /* Faire en sorte que le footer soit toujours collé en bas */
+    footer{
+        position: fixed;
+        background: lightgrey;
+        margin: 2rem;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        max-width: 100%
+    }
