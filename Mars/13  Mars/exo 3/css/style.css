@@ -1,0 +1,62 @@
+a{
+    background: black;
+    font-size: 4rem;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+
+    /* Les transitions s'ajoutent sur l'état de base des balises*/
+    -webkit-transition: background 2s, color 4s, padding 6s;
+    transition: background 2s, color 4s, padding 6s;
+
+}
+
+
+/* Modifier l'aspect de la balise a au survol */
+a:hover{
+    background: lightgrey;
+    color: red;
+    padding: 2rem;
+}
+
+section{
+    margin: 5rem;
+    background: red;
+    width: 10rem;
+    height: 10rem;
+    
+    /* Effectuer une transistion sur toutes les pptés */
+    transition: all 20s;
+
+    /* Modifier la courbe d'animation */
+    -webkit-transition-timing-function: cubic-bezier(0.15, -0.21, 0.92);
+    transition-timing-function: cubic-bezier(0.15, -0.21, 0.92);
+
+    /* ajouter un délai avant la transition */
+    -webkit-transition-delay: 1s;
+    transition-delay: 1s;
+}
+
+section:hover{
+    background: blue;
+
+    -webkit-transform: rotateZ(10800deg);
+    transform: rotateZ(10800deg);
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+li{
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    border-left: 0.1rem solid red;
+}
+
+li:hover{
+    padding-left: 0;
+    color: red;
+    border-left: 1rem solid red;
+}
