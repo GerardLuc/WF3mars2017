@@ -1,0 +1,123 @@
+/* style reset */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.5rem;
+}
+
+
+/* Créer un bord arrondi de 10 px */
+section{
+    border: 0.1rem solid red;
+    height: 15rem; /* Eviter d'utiliser height */
+    margin: 4rem;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+article{
+    width: 5rem;
+    height: 5rem;
+    background: black;
+    color: white;
+}
+
+/* CSS3 translate */
+
+    section:first-child article{
+        -ms-transform: translate(2rem, 2rem);
+        -webkit-transform: translate(2rem, 2rem);
+
+        /* La ppt transform en dernier */
+        transform: translate(2rem, 2rem);
+    }
+
+
+/* CSS3 rotate */
+
+    section:nth-child(2) article{
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+/* CSS3 skewX*/
+
+    section:nth-child(3) article{
+        -ms-transform: skewX(335deg);
+        -webkit-transform: skewX(335deg);
+
+        transform: skewX(335deg);
+    }
+
+    /* CSS3 skewY*/
+
+    section:nth-child(4) article{
+        -ms-transform: skewY(335deg);
+        -webkit-transform: skewY(335deg);
+
+        transform: skewY(335deg);
+    }
+
+/* CSS3 scale */
+        section:nth-child(5) article{
+        -ms-transform: scale(2,3);
+        -webkit-transform: scale(2,3);
+
+        transform: scale(2,3);
+    }
+
+/* CSS3 rotateX */
+
+section:nth-child(6) article{
+    -webkit-transform: rotateX(222.5deg);
+    transform: rotateX(222.5deg);
+}
+
+/* CSS3 rotateY */
+
+section:nth-child(7) article{
+    -webkit-transform: rotateY(122.5deg);
+    transform: rotateY(122.5deg);
+}
+
+/* CSS3 rotateZ */
+
+section:nth-child(8) article{
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+}
+
+/* Creer un rond avec un carré */
+
+section:nth-child(9) article{
+    border-radius: 50%;
+}
+
+section:nth-child(10) article{
+    border: 0.1rem solid red;
+    display: inline-block;
+    margin: 2.5rem;
+    position: relative;
+}
+
+section:nth-child(10) article p{
+
+    border: 0.1rem solid white;
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-ransform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
