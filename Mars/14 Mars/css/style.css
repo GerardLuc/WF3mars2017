@@ -1,10 +1,103 @@
+@import url(href="https://fonts.googleapis.com/css?family=Roboto:400,700,900");
+
 /* Style reset */
 
-*{
-    margin: 0;
-    padding: 0;
-}
+    /* Suppression des marges */
+    *{
+        margin: 0;
+        padding: 0;
+    }
 
-body{
-    background: grey;
-}
+    /* Configurer l'utilisation de 1rem = 10px */
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+    }
+
+    a{
+        text-decoration: none;
+        color: #349aa6;
+    }
+
+
+    /* Appliquer 2 disigns differends sur la balise H1 */
+    h1{
+        font-size: 1.5rem;
+        line-height: 1.8em;
+        font-weight: 400;
+        text-transform: uppercase;
+        
+    }
+
+    h1 span{
+        text-transform: lowercase;
+    }
+
+    h1 b{
+        display: block;
+        font-size: 2em;
+    }
+/*
+Style header
+*/
+
+    header{
+        text-align: center;
+        color: white;
+
+        /* Configurer l'image de fond en parallaxe */
+        background-image: url(../img/img-couverture-iphone.jpg);
+
+        /* Positionner l'image de fond */
+        background-position: top;
+
+        /* modifier la taille de l'image de fond */
+        background-size: 100%;
+
+        /* Bloquer l'image de fond */
+        background-attachment: fixed;
+    }
+
+    }
+
+    nav{
+        background: #002a35;
+        padding: 1rem;
+        margin-bottom: 4rem;
+    }
+
+    li{
+        display: inline-block;
+        width: 45%;
+    }
+
+    /* Selectionner uune baline grâce a son attribut */
+    
+    [src="img/logo-GRT-gaz-blanc.png"]{
+        width: 15rem;
+        margin: 4rem ;
+    }
+
+    /* Selectionner une balise suivante */
+    h1 + a{
+        background: #349aa6;
+        
+        /* Les balises de type inline ne peuvent pas recevoir de ppt width et height */
+        display: inline-block;
+        width: 5rem;
+        height: 5rem;
+
+        margin-bottom: 8rem;
+
+        /* Créer un rond avec une balise carrée */
+        border-radius: 50%;
+    }
+
+    a img{
+        padding-top: 0.85rem;
+    }
