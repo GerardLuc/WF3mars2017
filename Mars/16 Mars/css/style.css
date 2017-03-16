@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,400,700|Open+Sans:400,700');
+
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+/*
+Style reset 
+*/
+
+    *{
+        margin: 0;
+        padding: 0;
+
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        
+        font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+        font-size: 1.5rem;
+        text-align: center;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+
+
+    p{
+        
+    font-family: 'Merriweather ', sans-serif;
+    color: rgba(255,255,255,.7);
+    font-weight: 300;
+    font-size: 1.6rem;
+    }
+
+    h1, a{
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    h2, h3{
+        font-weight: 400;
+    }
+
+    h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 1em;
+        padding: 0 2rem;
+        color: white;
+    }
+
+    h1:after, h2:after:not(aside){
+        content: "";
+        display: block;
+        width: 5rem;
+        height: .3rem;
+        background: #F05F40;
+        margin: 2rem auto;
+        }
+
+
+    h3{
+        font-size: 2rem;
+        margin: 2rem auto 1rem auto;
+    }
+
+    a, figcaption{
+        text-decoration: none;
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+    header > a, main a{
+        font-size: 1.4rem;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        border: none;
+        
+        padding: 1.5rem 3rem;
+
+        -webkit-border-radius: 3rem;
+        border-radius: 3rem;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+/*
+Style header
+*/
+
+    header{
+        background-image: url(../img/header.jpg);
+        background-position: center;
+        background-size: cover;
+        padding: 10rem 1rem 10rem;
+    }
+
+    /*
+     Style nav 
+     */
+        nav{
+            color: black;
+            background: white;
+            padding: 1.5rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            text-align: right;
+            height: 5.3rem;
+        }
+
+        nav ul{
+            display: none;
+            text-align: center;
+            background: white;
+        }
+
+        nav> a{
+            position: absolute;
+            left: 1rem;
+            font-size: 1.8rem;
+            color: #F05F40;
+        }
+
+        nav p{
+            
+            cursor: pointer;
+            position: absolute;
+            right: 1.5rem;
+            bottom: 0.7rem;
+            padding: 0.7rem;
+            border: 0.1rem solid lightgrey;
+            border-radius: 0.4rem;
+
+            color: black;
+            font-weight: 700;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+        }
+
+        nav p:hover{
+            background: lightgrey;
+        }
+
+        nav p:hover + ul{
+            display: block;
+        }
+
+        li{
+            width: 100%;
+            padding-top: 2rem;
+        }
+
+        nav p i{
+            font-size: 1.2rem;
+        }
+
+        
+
+    /* 
+    Style reste header 
+    */
+
+    header p:nth-child(3){
+        padding-bottom: 5rem;
+    }
+
+    header a:nth-child(4){
+    background: #F05F40;
+    color: white;
+    }
+
+
+/*
+Style main
+*/
+    /* Style Section 1 */
+        section:first-child{
+            background: #F05F40;
+            padding: 10rem 1rem 5rem;
+        }
+
+        section:first-child h2{
+            color: white;
+            text-transform: none;
+            font-weight: 400;
+        }
+
+        section:first-child p{
+            padding-bottom: 5em;
+        }
+
+        section:first-child a{
+            background: white;
+            color: #222;
+        }
+
+    /* Style section 2 */
+        section:nth-child(2){
+            padding: 10rem 0;
+            
+        }
+
+        section:nth-child(2) article{
+            padding: 2rem;
+        }
+
+
+
+        section:nth-child(2) h2{
+            font-size: 3rem;
+        }
+
+        section:nth-child(2) h3{
+            font-size: 2.4rem;
+        }
+
+        section:nth-child(2) .fa{
+            color: #F05F40;
+            font-size: 5.5rem;
+        }
+
+        section:nth-child(2) p{
+        color: #777;
+        font-weight: 400;
+        }
+
+    /* Style section 3 */
+
+
+        figure{
+            position: relative;
+            float: left;
+            width: 100%;
+            line-height: 0;
+        }
+
+        figcaption{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(240, 95, 64, .7);
+            line-height: 1;
+            opacity: 0;
+        }
+
+        figcaption:hover{
+            opacity: 1;
+        }
+
+        figcaption a{
+            color: rgba(255, 255, 255, .7);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80%;
+        
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%)
+        }
+        
+
+        figcaption a b{
+            text-transform: none;
+            display: block;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 400;
+        }
+
+        figcaption a:hover{
+            
+            opacity: 1;
+        }
+
+        aside{
+            background: #222;
+            color: white;
+            padding: 5rem 3rem;
+        }
+
+        aside a{
+            background-color: white;
+            color: #222;
+        }
+
+        aside h2{
+            font-size: 3rem;
+            padding-bottom: 2rem;
+        }
+
+
+
+/*
+Style footer
+*/
+
+    Footer{
+        padding: 10rem 2rem;
+        
+        
+    }
+
+    footer p{
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: #333;
+    }
+
+    footer h2{
+        font-size: 3rem;
+    }
+
+    footer .fa{
+        font-size: 4rem;
+        display: block;
+        padding: 1rem;
+    }
+
+    footer a{
+        color: #F05F40;
+        font-weight: 400;
+        Font-family: 'Merriweather ', sans-serif;
+        text-transform: lowercase;
+        font-size: 1.6rem;
+    }
+
+        /* Ecran d'une taille minimale de 850px */
+@media screen and (min-width: 850px){
+
+    /* Style Reset */
+        h2{
+            font-size: 3rem;
+        }
+
+        header > a, main a{
+            font-size: 1.5rem;
+        }
+
+    /* Style Header */
+        header:before {
+            content: "";
+            display: block;
+            height: .1rem;
+            background: white;
+            opacity: .7;
+            position: absolute;
+            width: 100%;
+            top: 8rem;
+        }
+
+        nav{
+            max-width: 100%;
+            border: none;
+        }
+
+        h1 {
+            font-size: 5rem;
+            max-width: 85rem;
+            margin: auto;
+        }
+
+        header > p{
+            font-size: 1.8rem;
+            max-width: 65rem;
+            margin: 0 auto 4rem auto;
+        }
+
+    /* Style What you need */
+        section:first-child{
+            padding: 8rem 2rem;
+        }
+        
+        section:first-child p{
+            max-width: 65rem;
+            margin: 0 auto 4rem auto;
+        }
+        
+    /* Style Services*/
+        section:nth-child(2), footer{
+            max-width: 95rem;
+            margin: auto;
+            padding: 8rem 2rem;
+        }
+
+        section:nth-child(2) article {
+            width: 24%;
+            display: inline-block;
+        }
+
+    /* Style Portfolio */
+        figure {
+            width: 33.3333%;
+        }
+
+    /* Style footer */
+        footer{
+            max-width: 75rem;
+            margin: auto;
+            padding: 10rem 0;
+        }
+}

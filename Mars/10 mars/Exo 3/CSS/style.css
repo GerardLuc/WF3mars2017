@@ -184,10 +184,6 @@ Style header
              /* Réduire l'opacité de la balise */
               opacity: 0;
 
-
-
-              
-
               /* Gérer une transition entre les etats de la balise */
 
               -webkit-transition: opacity 0.75s; /* For Safari 3.1 to 6.0 */
