@@ -83,6 +83,10 @@ Style body
             display: none;
         }
 
+        p{
+            padding: 1rem;
+        }
+
         header> a{
             background: white;
             display: inline-block;
@@ -308,9 +312,6 @@ requette média
             display: none;
         }
 
-        nav{
-            display:  block;
-        }
 
         nav li{
             display: inline-block;

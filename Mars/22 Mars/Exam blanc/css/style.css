@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,500,700|Roboto:400,700");
+
+/*
+Style reset
+*/
+
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+        text-align: left;
+    }
+
+    h1, h2, h3{
+        font-family: 'Quicksand', sans-serif;
+    }
+
+    h2{
+        background: #0b0b2d;
+        color: white;
+        font-size: 2rem;
+        display: inline-block;
+        padding: 1rem;
+    }
+
+    a, p, input, textarea{
+        font-family: 'Roboto', serif;
+    }
+
+    p{
+        padding:1rem 0;
+    }
+
+    ul{
+        list-style: none;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+    a{
+        text-decoration: none;
+        color: white
+    }
+
+
+/*
+Style header
+*/
+
+    /*
+    Style nav
+    */
+
+        nav{
+            background-image: url(../img/back.jpg);
+            color: white;
+            padding: 2rem;
+            font-size: 2rem;
+        }
+
+        nav li{
+            font-size: 0.75em;
+        }
+        
+
+        h3{
+            font-size: 2.5rem;
+        }
+
+
+    /*
+    Style header
+    */
+
+        header section{
+            padding: 2rem 2rem 2rem ;
+        }
+
+
+        h1{
+            color: #0b0b2d;
+            padding-bottom: 3rem;
+            font-size: 3rem;
+
+        }
+
+        header img{
+            width: 15rem;
+            border-radius: 50%;
+        }
+
+/*
+Style main
+*/
+
+    section{
+        padding: 2rem 2rem 2rem ;
+
+    }
+
+
+    /* 
+    style figures
+    */
+
+        figure{
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        figcaption {
+                font-weight: 700;
+                position: absolute;
+                z-index: 1;
+                bottom: 0;
+                left: 50%;
+                width: 101%;
+
+                background: rgba(255, 255, 255, 0.75);
+                padding: 1rem;
+                -webkit-transform: translate(-50%, -30%);
+                transform: translate(-50%, -30%);
+        }
+
+
+    /*
+    Style form
+    */
+    
+    input:not([type="submit"]), textarea{
+        border: none;
+        display: block;
+        padding: 1rem;
+        background: lightgrey;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    textarea{
+        min-height: 15rem;
+    }
+
+    
+
+    form :last-child{
+        color: white;
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 700;
+        padding: 1rem;
+        background: #0b0b2d;
+        border: none;
+        margin-bottom: 2rem;
+    }
+
+    iframe{
+            width: 100%;
+            min-height: 20rem;
+            border: none;
+        }
+
+
+
+    /*
+    Style footer
+    */
+    
+        footer{
+            background: #0b0b2d;
+            color: white;
+            padding: 2rem 2rem;
+        }
+
+
+
+@media screen and (min-width: 750px){
+
+    ul, li{
+        display: inline-block;
+        text-align: right;
+    }
+
+    nav{
+        
+    }
+
+    h3{
+        display: inline-block;
+    }
+
+
+    figure{
+        display: inline-block;
+        width: 24.5%;
+        padding: 0.5rem;
+    }
+
+    header p{
+        display: inline-block;
+        width: 83%
+    }
+
+    figcaption{
+        transform: translate(-50%, -20%);
+    }
+
+    main, header section{
+    
+        max-width: 105rem;
+        margin: auto ;
+    }
+
+    article p{
+        display: inline-block;
+        width: 49%;
+    }
+    h2{
+        display: inline-block;
+    }
+
+    nav{
+        text-align: right;
+    }
+
+    main section:last-child article{
+        display: inline-block;
+        width: 49%;
+    }
+
+    iframe{
+        min-height: 32rem;
+    }
+
+    ul{
+        display: block;
+        text-align: center;
+        max-width: 101rem;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    header ul{
+        
+        text-align: right;
+    }
+
+    footer ul{
+        text-align: left;
+    }
+    nav h3{
+        position: absolute;
+        left: 0;
+    }
+
+    footer h3{
+        position: absolute;
+        right: 0;
+    }
+
+}
