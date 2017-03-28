@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.5rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+
+/*
+Style header
+-Ajouter une marge interieure de 20 px
+-les liens de la nav sont centrés sur une ligne sauf le premier qui est a gauche et le dernier qui est a droite
+-la nav ne dépasse pas les 850px
+*/
+
+    header{
+        padding: 2rem;
+        border: 0.1rem dashed black;
+        text-align: center;
+    }
+
+    nav{
+        max-width: 85rem;
+        position: relative;
+        margin: auto;
+        border: 0.3rem double red;
+    }
+
+    li{
+        display: inline-block;
+    }
+
+    li:first-child{
+        position: absolute;
+        left: 0;
+    }
+
+    li:last-child{
+        position: absolute;
+        right: 0;
+    }
+
+/*
+Style main
+-le main ne dépasse pas 850px
+-Les differentes zones ont une marge de 40px
+*/
+
+    main{
+        max-width: 85rem;
+        margin: 0 auto 4rem auto;
+    }
+
+    section:not(:last-child){
+        margin-bottom: 4rem;
+    }
+
+    /*
+    Style PortFolio
+    -Le portfolio est sur 2 colones
+    -Les figcaption sont calés au-dessus de l'image avec un fond blanc à 50% d'opacité.
+    */
+
+        figure{
+            display: inline-block;
+            width: 49%;
+            position: relative;
+        }
+
+        figcaption{
+            background: rgba(255,255,255, 0.5);
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 1rem;
+        }
+
+
+
+    /*
+    Style contact
+    -Le textarea et le input (sauf submit) font toute la largeur du formulaire
+    -Le type submit a une couleur de fond et une couleur de police
+    */
+
+        input:not([type="submit"]), textarea{
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        [type="submit"]{
+            background: darkred;
+            color: yellow;
+            border: none;
+            padding: 1rem;
+        }
+
+/* Desktop down */
+
+@media screen and (max-width:450px){
+
+    figure{
+        display: block;
+        width: 100%;
+    }
+
+
+
+}

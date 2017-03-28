@@ -94,7 +94,7 @@ Style header
 
         }
 
-        header img{
+        main section:first-child img{
             width: 15rem;
             border-radius: 50%;
         }
