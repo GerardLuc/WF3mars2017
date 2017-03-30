@@ -1,0 +1,11 @@
+.error{
+    color: red;
+}
+
+.hidden{
+    display: none;
+}
+
+.move{
+    padding-left: 3rem;
+}
