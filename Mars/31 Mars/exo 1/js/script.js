@@ -33,6 +33,14 @@ $(document).ready( function(){
     // Générer une balise nav dans le header
     myHeader.append('<nav><i class="fa fa-bars" aria-hidden="true"></i><ul></ul></nav>');
 
+
+    // Activer le burgerMenu au click sur la balise .fa-bars
+    $('.fa-bars').click(function(){
+        
+        $('nav ul').toggleClass('toggleBurger');
+
+    })
+
     // Faire une boucle for sur myNav pour générer les liens de la myNav
     for ( var i = 0; i < myNav.length; i++ ){
         console.log( myNav[i] );
@@ -40,14 +48,23 @@ $(document).ready( function(){
         // Génerer des balises html
         $('ul').append('<li><a href="' + myNav[i] + '">' + myNav[i] + '</a></li>');
     }
+
+    
+
+
     // Afficher dans le main le titre issu de l'objet myTitles
     var myMain = $('main');
     myMain.append( '<h2>' + myTitles.Acceuil + '</h2>' )
     myMain.append('<section>' + myContent.Acceuil + '</section>')
 
+    // Ajouter la classe active sur la premiere li de la nav
+    $('nav li:first').addClass('active')
+
 
     // Capter le click sur les balises a en bloquant le comportement naturel des balises a
     $('a').click( function(evt){
+
+        $('nav li').removeClass('active');
 
         // Bloquer le comportement naturel de la balise
         evt.preventDefault();
@@ -65,15 +82,26 @@ $(document).ready( function(){
 
             // Selectionner la section pour change le contenu
             $('section').html( myContent.Acceuil);
+            $(this).parent().addClass('active')
 
 
         } else if ($(this).attr('href') == 'Portfolio' ){
             $('h2').text( myTitles.portfolio);
             $('section').html( myContent.portfolio);
+            $(this).parent().addClass('active')
         } else{
             $('h2').text( myTitles.contact);
             $('section').html( myContent.contact);
+
+            // Ajouter la classeau boutton sur la balise selectionnée
+            $(this).parent().addClass('active')
+
         }
+
+
+
+    // Fermer le burgerMenu
+    $('nav ul').removeClass('toggleBurger')
 
     })
 
