@@ -1,20 +1,48 @@
-<!DOCTYPE html>
-<html lang="fr">
++<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>exo 6: ajouter une balise dans une autre balise</title>
+        <title>Exo 8 les selecteurs jquery</title>
     </head>
     <body>
-        <h1>exo 6: ajouter une balise dans une autre balise</h1>
+        
+        <header>
+            <h1>Exo 8 les selecteurs jquery</h1>
+            <button class="myClass">Move</button>
+            <button>HAAAAAAAAAAAAAADF3ZE</button>
+        </header>
 
         <main>
+            <section>
+                <h2 id="myId">About</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, dignissimos. Ea nam voluptatibus doloremque corporis possimus ex sed itaque repudiandae. Mollitia iste esse soluta. Dignissimos mollitia voluptas facere, molestias impedit.</p>
+            </section>
 
+            <section>
+                <h2>Contact <i>me</i></h2>
+                <h3>catch me if you can</h3>
+                <p class="myClass">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique at natus animi quod esse voluptate dolor quam, reiciendis cupiditate blanditiis rerum saepe est itaque ipsa sint nisi. Et, totam, aut!</p>
+            </section>
+            
+
+            <!--
+                TOUJOURS intégrer jquery AVANT le script de site
+            -->
+            <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+            <!-- Intégrer le JS à la fin du body -->
+            <script src="js/script.js" ></script>
         </main>
 
+        <ul>
+            <li>Acceuil</li>
+            <li>A propos</li>
+            <li>PortFolio</li>
+            <li>Contact</li>
+        </ul>
 
-        <script src="js/script.js"></script>
         
     </body>
 </html>
