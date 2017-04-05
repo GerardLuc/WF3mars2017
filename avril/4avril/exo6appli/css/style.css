@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Averia+Sans+Libre:300,400,700" rel="stylesheet' );
 
 
-
 /*
 reset style
 */
@@ -72,6 +71,19 @@ Style body
     style header
     */
 
+        .aboutPage nav{
+            position: fixed;
+            z-index: 10000;
+            top: 0;
+            left: -100%;
+            height: 100%;
+            width: 100%;
+            width: 20rem;
+            padding: 2rem;
+            background: #000000;
+            display: block;
+        }
+
         header{
             color: white;
             background-color: #2D1673;
@@ -94,7 +106,6 @@ Style body
             width: 4rem;
             height: 4rem;
 
-
             border: .2rem solid #2D1673;
             -webkit-border-radius: 50%;
             border-radius: 50%;        
@@ -105,14 +116,11 @@ Style body
             left: 50%;
             top: 100%;
             transform: translate( -50%, -50% )
-
             
         }
 
         /* Afficher la nav au survol de la balise a du header */
-        header> a:hover +nav{
-            display: block;
-        }
+      
 
         header> a:hover{
             background: #2D1673;
