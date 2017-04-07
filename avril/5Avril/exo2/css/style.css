@@ -1,0 +1,349 @@
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Averia+Sans+Libre:300,400,700" rel="stylesheet' );
+
+
+/*
+reset style
+*/
+
+    *{
+        margin: 0;
+        padding: 0;
+
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+        text-align: center;
+        padding-bottom: 2rem;
+    }
+
+    p, footer, a,{
+        font-family:'Averia Sans Libre', sans-serif;
+    }
+
+    a, header li{
+        text-decoration: none;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+
+    }
+
+    h1{
+        font-family: 'Amatic SC', sans-serif;
+        font-weight: 700;
+        font-size: 4rem;
+        padding: 1rem 2rem
+    }
+
+    h2{
+        font-family: 'Amatic SC', sans-serif;
+        font-weight: 400;
+    }
+
+    h1 span{
+        font-family: 'Averia Sans Libre', sans-serif;
+        font-size: 0.5em;
+        display: block;
+        font-weight: 400;
+    }
+
+    /* supprimer le style des listes */
+    ul{
+        list-style: none;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+/*
+Style body 
+*/
+    /*
+    style header
+    */
+        
+
+        header{
+            color: white;
+            background-color: #2D1673;
+            position: relative;
+            padding: 0 1rem 2rem
+        }
+
+        nav{
+            display: none;
+        }
+
+        header> a{
+            background: white;
+            display: inline-block;
+
+            width: 4rem;
+            height: 4rem;
+
+            border: .2rem solid #2D1673;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;        
+            padding: 1rem;
+
+            position: absolute;
+
+            left: 50%;
+            top: 100%;
+            transform: translate( -50%, -50% )
+            
+        }
+
+        /* Afficher la nav au survol de la balise a du header */
+      
+
+        header> a:hover{
+            background: #2D1673;
+            color: white;
+            border-color: white;
+        }
+
+
+
+        header li{
+            background: rgba(255, 255, 255, 0.5);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            
+            font-weight: 700;
+        }
+
+        header li:hover{
+            background: white
+        }
+
+        header li:hover a{
+            color: #2D1673
+        }
+
+        nav a{
+            color: white;
+        }
+
+
+    /*
+    Style main
+    */
+        main {
+            padding: 4rem 2rem 10rem 2rem;
+        }
+
+        /*
+        Style About
+        */
+            [src="img/LegendFaller.png"]{
+                border-radius: 50%;
+                width: 12rem;
+                margin-bottom: 2rem;
+                -webkit-box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+                -moz-box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+                box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+            }
+
+            [src="img/LegendFaller.png"] + p{
+                margin-bottom: 2rem;
+            }
+
+            h3 + ul{
+                text-align: left;
+                margin: 2rem auto;
+            }
+
+            h3 + ul li{
+
+                background: red;
+                padding: .1rem;
+                margin-bottom: 1rem;
+                position: relative;
+
+            }
+
+            h3 + ul span{
+                position: absolute;
+            }
+
+            h3 +ul p{
+                background: white;
+                padding: 1rem;
+                width: 0;
+                min-height: 3.5rem;
+            }
+
+
+        /* Style Portfolio */
+            figure{
+                position: relative;
+            }
+
+            figcaption {
+                position: absolute;
+                width: 20rem;
+                background: white;
+                padding: 1rem 2rem;
+                top: 50%;
+                left: 50%;
+
+                -webkit-transform: translate(-50% , -50%);
+                transform: translate(-50% , -50%);
+
+                -webkit-border-top-left-radius: 1rem;
+                border-top-left-radius: 1rem;
+            }
+
+            figcaption button{
+                position: absolute;
+                left: 0;
+                top: 100%;
+                width: 100%;
+                border: 0;
+                padding: 1rem;
+                -webkit-border-bottom-right-radius: 1rem; 
+                border-bottom-right-radius: 1rem;
+            }
+
+            #modal{
+                position: fixed;
+                z-index: 2000;
+                top: 0;
+                left: 0;
+                background: rgba(0, 0, 0, 0.7);
+                width: 100%;
+                height: 100%;
+
+                display: none;
+                padding: 6rem 4rem;
+            }
+
+            #modal article{
+                
+                
+                background: white;
+                border-radius: 1rem;
+            }
+
+        /* 
+        Style contacts 
+        */
+
+            form{
+                margin: 2rem auto;
+            }
+            textarea, input:not([type="submit"]){
+                display: block;
+                width: 100%;
+                border: none;
+                border-bottom: 0.1rem dotted #2D1673;
+                padding: 1rem;
+                margin-bottom: 2rem;
+            }   
+
+            textarea{
+                min-height: 15rem;
+            }
+
+            form :last-child{
+                color: white;
+                background: #2D1673;
+                padding: 1rem;
+            }
+
+            iframe{
+                width: 100%;
+                min-height: 20rem;
+                border: none;
+            }
+
+
+
+/*
+style footer
+*/
+    footer{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: #2D1673;
+        color: white;
+        padding: 1rem 2rem;
+        
+        z-index: 2000;
+    }
+
+    footer li:not(:last-child){
+        display: inline-block;
+        
+        width: 3rem;
+        height: 3rem;
+        border: solid white 0.2rem;
+        border-radius: 50%;
+        padding-top: 0.5rem;
+    }
+
+    footer a{
+        color: white;
+    }
+
+/*
+requette média
+*/
+    /* Ecrans de taille min de 400 px*/
+    @media screen and (min-width: 400px){
+        .portfolioPage article{
+            display: inline-block;
+            width: 49%;
+         }
+
+         .portfolioPage article:nth-child(2n+2){
+             padding: 0 0 0 1rem;
+         }
+
+    }
+
+    /* Ecrans de taille min de 750 px*/
+    @media screen and (min-width: 750px){
+
+        header{
+            text-align: left;
+            
+            text-indent: 1rem;
+        }
+
+        nav{
+            display: block;
+        }
+
+        
+
+        header> a{
+            display: none;
+        }
+
+
+        nav li{
+            display: inline-block;
+            
+            text-indent: 0;
+        }
+        h1 span{
+            display: inline;
+        }
+
+        main{
+            text-align: center;
+            max-width: 950px;
+        }
+    }
