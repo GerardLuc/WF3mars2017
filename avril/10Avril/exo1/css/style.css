@@ -1,0 +1,208 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300i,400|Roboto:400,700|Yellowtail');
+
+/*
+style reset
+*/
+
+*{
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+img{
+    max-width: 100%;
+}
+
+h1, h2, a, footer p, figcaption{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+body, h1 i, figcaption i{
+    font-family: 'Merriweather', serif; 
+    font-weight: 400;
+} 
+
+h1, h2, a{
+    text-transform: uppercase;
+}
+
+p{
+    font-family: 'Merriweather', serif; 
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 0.7em ;
+    margin-bottom: 3rem;
+}
+
+/*
+Style header
+*/
+
+    header{
+        background: url(../img/header-bg.jpg);
+        
+        background-size: 100%;
+        padding: 2rem;
+        color: white;
+    }
+
+
+
+    /*
+    Style nav
+    */
+
+        ul{
+            /*display: none;*/
+        }
+
+        form{
+            position: relative;
+        }
+
+        nav li{
+            display: inline-block;
+            padding: 0 0.5rem;
+        }
+
+        nav ul{
+            position: relative;
+        }
+
+        nav li:first-child a{
+            font-family: 'Yellowtail', cursive;
+            color: #f9cf49;
+            font-size: 1.5em;
+        }
+
+        nav a{
+            font-size: 1rem;
+        }
+
+
+    h1{
+        font-size: 3rem;
+        padding: 2rem 1rem;
+    }
+
+    h1 i{
+        display: block;
+        font-size: 0.5em;
+    }
+
+    header h1 + a{
+        background: #f9cf49;
+        border-radius: 0.3rem;
+        padding: 1rem;
+        margin-bottom: 3rem;
+    }
+
+
+/*
+style main
+*/
+
+/*
+Style PortFolio
+*/
+
+    section{
+        padding: 2rem;
+    }
+
+    h2{
+        padding: 1rem;
+    }
+
+    section:first-child{
+        background: #eeeeee;
+    }
+
+    figure{
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }    
+
+    figcaption{
+        width: 100%;
+        background: white;
+        padding: 2rem;        
+    }
+
+    figcaption i{
+        display: block;
+    }
+
+
+
+    img:hover{
+        background: #f9cf49;
+        
+    }
+
+/*
+Style form
+*/
+
+    section:last-child{
+        background-image: url(../img/map-image.png);
+        background-size: 100%;
+        background-color: #222222;
+        color: white;
+        
+    }
+
+    input:not([type="submit"]), textarea{
+        border: none;
+        border-radius: 0.3rem;
+        padding: 1rem;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    textarea{
+        min-height: 10rem;
+    }
+
+    [type="submit"]{
+        border: none;
+        border-radius: 0.3rem;
+        padding: 1rem;
+        background: #f9cf49;
+        color: white;
+    }
+
+
+/*
+style footer
+*/
+    footer{
+        font-size: 1rem;
+    }
+
+    footer a{
+        color: #f9cf49;
+    }
+
+    footer li{
+        display: inline-block;
+    }

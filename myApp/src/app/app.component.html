@@ -1,3 +1,20 @@
-<h1>
-  {{title}}
-</h1>
+<header class="animated fadeInUp">
+  <h1>Luc Gerard <span>Formateur et devellopeur frontend</span></h1>
+
+  <a (click)="OpenBurger()"> <i class = .fa fa-bars></i>
+<nav>
+  <ul>
+    <li><a (click="closeBurger()">Acceuil</a></li>
+    <li><a (click="closeBurger()"About</a></li>
+    <li><a (click="closeBurger()">Portfolio</a></li>
+    <li><a (click="closeBurger()">contact</a></li>
+  </ul>
+</nav>
+
+</header>
+
+<main class="animated flipInY">
+<router-outlet></router-outlet>
+</main>
+
+<footer>under MIT licence</footer>
