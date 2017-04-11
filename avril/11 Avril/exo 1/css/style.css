@@ -1,0 +1,99 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+/*
+Style reset
+*/
+*{
+    padding: 0;
+    margin: 0;
+
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+img{
+    max-width: 100%;
+}
+
+/*
+mettre le formulaire et l'image sur 2 colones
+*/
+
+main{
+    padding: 2rem;
+}
+
+section:nth-child(2) article{
+    text-align: left;
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+}
+
+iframe{
+    width: 30rem;
+    height: 20rem;
+}
+
+/*
+modal
+*/
+    #modal{
+        position: fixed;
+        
+        padding: 4rem 2rem;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none;
+    }
+
+    #modal article{
+        position: relative;
+        font-size: 2rem;
+        padding: 4rem 2rem;
+        background: white;
+        color: black;
+    }
+
+    .fa-times{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+
+/*
+Pour les ecrans d'une taille min de 550 px, sexcctions sur 2 colones
+*/
+
+    @media screen and (min-width: 550px){
+
+        main section{
+            display: inline-block;
+            width: 49%;
+            vertical-align: top;
+            margin: auto;
+        }
+    }
+
+/*
+Pour les ecrans de 850+ px, sections sur 3 colonnes
+*/
+
+    @media screen and (min-width: 850px){
+        main section{
+            width: 33%;
+        }
+
+    }

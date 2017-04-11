@@ -15,7 +15,6 @@ $(document).ready(function(){
         var userName = $('[placeholder="Your name*"]');
         var userEmail = $('[placeholder="Your email*"]');
         var userSubject = $('select');
-        var userMessage = $('textarea');
         var formScore = 0;
 
         // verifier que l'utilisateur a saisi son nom

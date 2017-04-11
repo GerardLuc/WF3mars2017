@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css?family=Merienda|Roboto:300,400,700');
+
+/*
+Style reset
+*/
+
+*{
+    padding: 0;
+    margin: 0;
+
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+
+img{
+    max-width: 100%;
+}
+
+h1, h2{
+    font-family: 'Merienda', cursive;
+    text-align: center;
+}
+
+h2{
+    color: #2F4073;
+    margin-bottom: 1rem;
+}
+
+p{
+    font-weight: 300;
+}
+
+/*
+Style header
+*/
+
+    header{
+        background-image: url(../img/background.jpg);
+        margin-bottom: 4rem;
+    }
+
+    nav, footer{
+        background: #061339;
+        padding: 1rem;
+    }
+
+    nav h2{
+        color: white;
+        text-align: left;
+    }
+
+    h1{
+        padding: 6rem 2rem;
+        font-size: 3.5rem;
+        color: white;
+        text-shadow: .15rem .15rem 0.5rem black
+    }
+
+
+/*
+Style main
+*/
+
+    section{
+        padding: 1rem;
+    }
+
+    /*
+    Style formulaire
+    */
+
+        form{
+            border: lightgrey solid .1rem;
+            padding: 1rem;
+            font-weight: 700;
+            -webkit-border-radius: .3rem;
+            border-radius: .3rem;
+            text-align: left;
+        }
+
+        label{
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        select{
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 2rem;
+            -webkit-border-radius: .3rem;
+            border-radius: .3rem;
+        }
+
+        textarea{
+            width: 100%;
+            height: 20rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            -webkit-border-radius: .3rem;
+            border-radius: .3rem;
+        }
+
+        input{
+            padding: 1rem;
+            -webkit-border-radius: .5rem;
+            border-radius: .5rem;
+            border: none;
+            width: 100%;
+            background: #5cb85c;
+            color: white;
+        }
+
+    /*
+    Style section 2
+    */
+
+        section:last-child {
+            background: #dedede;
+            text-align: left;
+        }
+
+        section:last-child:hover img{
+            background: #061339
+        }
+
+        section:last-child img{
+            background: #7885A5;
+        }
+
+
+        p{
+            padding-bottom: 1rem;
+        }
+/*
+Style Footer
+*/
+
+    footer{
+        text-align: right;
+        color: white;
+        font-size: 1.2rem;
+    }
+
+/*
+Interactivité JS
+*/
+
+.cacher{
+    display: none;
+}
+
+.error{
+    border: solid red 0.2rem;
+}
+
+
+
+/*
+requette média
+*/
+    @media screen and (min-width: 850px){
+
+        
+
+        article, img{
+            display: inline-block;
+        }
+
+        section:first-child{
+            vertical-align: top;
+            max-width: 108rem;
+            margin-bottom: 10rem;
+            margin: auto;
+        }
+
+        section:first-child img{
+            width: 75%;
+            float: right;
+        }
+
+        section:first-child article{
+            width: 25rem;
+        }
+
+        section:last-child{
+            margin-top: 5rem; 
+            vertical-align: top;
+        }
+
+        section:last-child h2{
+            text-align: left;
+            font-weight: 400;
+        }
+
+        section:last-child span{
+            display: block;
+            max-width: 108rem;
+            margin: auto;
+        }
+
+        section:last-child article{
+            width: 70%;
+
+        }
+
+            section:last-child img{
+                width: 20rem;
+            }
+
+        }
