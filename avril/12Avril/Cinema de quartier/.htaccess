@@ -1,0 +1,12 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /avril/12Avril/Cinema%20de%20quartier/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /avril/12Avril/Cinema%20de%20quartier/index.php [L]
+</IfModule>
+
+# END WordPress
