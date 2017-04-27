@@ -16,13 +16,16 @@ if(! empty($_POST)){ // Si le formulaire est soumis il y a des indices corresopo
        
 
         // Controles du formulaire
-        if(strlen($_POST['prenom']) < 3 ||  strlen($_POST['prenom']) > 20) $message .='<div>Le nnom doit comporter au moins 3 caracteres</div>'
+        if(strlen($_POST['prenom']) < 3 ||  strlen($_POST['prenom']) > 20) $message .='<div>Le nnom doit comporter au moins 3 caracteres</div>';
 
-        if(strlen($_POST['nom']) < 3 ||  strlen($_POST['nom']) > 20) $message .='<div>Le nom doit comporter au moins 3 caracteres</div>'
+        if(strlen($_POST['nom']) < 3 ||  strlen($_POST['nom']) > 20) $message .='<div>Le nom doit comporter au moins 3 caracteres</div>';
         
-        if(strlen($_POST['sexe']) != 'm' ||  strlen($_POST['sexe']) != 'f') $message .='<div>Le sexe n\'est pas correct</div>'
+        if(strlen($_POST['sexe']) != 'm' ||  strlen($_POST['sexe']) != 'f') $message .='<div>Le sexe n\'est pas correct</div>';
 
-        if(!is_numeric($_POST['salaire']) || $_POST['salaire'] <= 0) $message .='<div>Le salaire doit etre superieur a 0</div>'
+        if(!is_numeric($_POST['salaire']) || $_POST['salaire'] <= 0) $message .='<div>Le salaire doit etre superieur a 0</div>'; // is_numerique() teste si c'est un nombre'
+
+        $tab_date = explode('-', $_POST['date_embauche']); // Met le jour le mois et l'annee dans un array pour pouvoir les passer a la fonction checkdate ($mois, $jour, $annee)
+        if(! (isset($tab_date[0]) && isset($tab_date[1]) && isset($tab_date[2]) && checkdate($tab_date[1], $tab_date[2], $tab_date[0]) ) ) $message .='<div>La date n\'est pas valide</div>';
 
 
         $resultat = $pdo->prepare("INSERT INTO employes (prenom, nom, sexe, service, date_embauche, salaire) VALUES (:prenom, :nom, :sexe, :service, :date_embauche, :salaire) ");

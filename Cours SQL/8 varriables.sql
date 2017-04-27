@@ -1,7 +1,7 @@
 -- *************************************
 -- Variables en SQL
 -- *************************************
--- Une variable est un es)pace mémoire nommé qui permet de conserver une valeur
+-- Une variable est un espace mémoire nommé qui permet de conserver une valeur
 
 SHOW VARIABLES;
 
