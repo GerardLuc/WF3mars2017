@@ -365,7 +365,7 @@ echo '<h1>013. Mysqli</h1>';
 //  Il existe une autre maniere de se connecter a une bdd et d'effectuer des requetes sur celle-ci: l'extention Mysqli
 
 // Connexion a la bdd:
-$mysqli = new Mysqli('localhost', 'root', '', 'entrprise');
+$mysqli = new Mysqli('localhost', 'root', '', 'entreprise');
 
 // Un exemple de requete:
 $requete = $mysqli->query("SELECT * FROM employes");

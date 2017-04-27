@@ -9,48 +9,56 @@
     4- Aficher a la fin un message "l'employé a bien été ajouté"
 
 */
+
+$message = '';
 $pdo = new PDO('mysql:host=localhost;dbname=entreprise', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
 
 
 if(! empty($_POST)){ // Si le formulaire est soumis il y a des indices corresopondants au names
        
-
         // Controles du formulaire
-        if(strlen($_POST['prenom']) < 3 ||  strlen($_POST['prenom']) > 20) $message .='<div>Le nnom doit comporter au moins 3 caracteres</div>';
+        if(strlen($_POST['prenom']) < 3 ||  strlen($_POST['prenom']) > 20) $message .='<div>Le prenom doit comporter au moins 3 caracteres</div>';
 
         if(strlen($_POST['nom']) < 3 ||  strlen($_POST['nom']) > 20) $message .='<div>Le nom doit comporter au moins 3 caracteres</div>';
         
-        if(strlen($_POST['sexe']) != 'm' ||  strlen($_POST['sexe']) != 'f') $message .='<div>Le sexe n\'est pas correct</div>';
+        if($_POST['sexe'] != 'm' && $_POST['sexe'] != 'f') $message .='<div>Le sexe n\'est pas correct</div>';
+
+        if(strlen($_POST['service']) < 3 ||  strlen($_POST['service']) > 20) $message .='<div>Le service doit comporter au moins 3 caracteres</div>';
 
         if(!is_numeric($_POST['salaire']) || $_POST['salaire'] <= 0) $message .='<div>Le salaire doit etre superieur a 0</div>'; // is_numerique() teste si c'est un nombre'
 
         $tab_date = explode('-', $_POST['date_embauche']); // Met le jour le mois et l'annee dans un array pour pouvoir les passer a la fonction checkdate ($mois, $jour, $annee)
-        if(! (isset($tab_date[0]) && isset($tab_date[1]) && isset($tab_date[2]) && checkdate($tab_date[1], $tab_date[2], $tab_date[0]) ) ) $message .='<div>La date n\'est pas valide</div>';
+        if(! (isset($tab_date[0]) && isset($tab_date[1]) && isset($tab_date[2]) && checkdate($tab_date[1], $tab_date[2], $tab_date[0]) ) ) $message .='<div>La date n\'est pas valide</div>'; // checkdate ($mois, $jour, $annee)
 
+            if (empty($message)){ // Si les messages sont vides c'est qu'il n'y a aps d'erreur
 
-        $resultat = $pdo->prepare("INSERT INTO employes (prenom, nom, sexe, service, date_embauche, salaire) VALUES (:prenom, :nom, :sexe, :service, :date_embauche, :salaire) ");
+                $resultat = $pdo->prepare("INSERT INTO employes (prenom, nom, sexe, service, date_embauche, salaire) VALUES (:prenom, :nom, :sexe, :service, :date_embauche, :salaire) ");
 
-        $resultat->bindParam(':prenom',  $_POST['prenom'], PDO::PARAM_STR);
-        $resultat->bindParam(':nom',  $_POST['nom'], PDO::PARAM_STR);
-        $resultat->bindParam(':sexe',  $_POST['sexe'], PDO::PARAM_STR);
-        $resultat->bindParam(':service',  $_POST['service'], PDO::PARAM_STR);
-        $resultat->bindParam(':date_embauche',  $_POST['date_embauche'], PDO::PARAM_STR);
-        $resultat->bindParam(':salaire',  $_POST['salaire'], PDO::PARAM_INT);
+                $resultat->bindParam(':prenom',  $_POST['prenom'], PDO::PARAM_STR);
+                $resultat->bindParam(':nom',  $_POST['nom'], PDO::PARAM_STR);
+                $resultat->bindParam(':sexe',  $_POST['sexe'], PDO::PARAM_STR);
+                $resultat->bindParam(':service',  $_POST['service'], PDO::PARAM_STR);
+                $resultat->bindParam(':date_embauche',  $_POST['date_embauche'], PDO::PARAM_STR);
+                $resultat->bindParam(':salaire',  $_POST['salaire'], PDO::PARAM_INT);
 
-        $req = $resultat->execute();
+                $req = $resultat->execute();
 
-        if ($req) { // Execute ci-dessus renvoie soit un objet PDOStatement (Qui a une valeur implicite TRUE) si la requette a fonctionné, sinon il renvoie un boolean FALSE. Si$req contient un objet, il vaut true implicitement. On entre donc dans  la condition.
-            echo 'l\'empoyé a bien été ajouté';
+                // Afficher un message "l'employé a été ajouté"
+                if ($req) { // execute() renvoie TRUE en cas de succes de la requette, ou false.
+                    echo 'l\'empoyé a bien été ajouté';
 
-        } else {
-            echo 'il y a eu une erreur lors de l\'enregistrement';
-        }
+                } else {
+                    echo 'il y a eu une erreur lors de l\'enregistrement';
+                }
+
     }
-
+}
 
 ?>
 
 <h1>Formulaire 1</h1>
+
+<?php echo $message; ?>
 
 <form method="post" action="">
 
@@ -64,7 +72,7 @@ if(! empty($_POST)){ // Si le formulaire est soumis il y a des indices corresopo
     <input type="text" id="nom" name="nom" > <br>
 
     <label>sexe:</label>
-    <input type="radio" id="male" name="sexe" value='m'> <label for="homme">Male</label>
+    <input type="radio" id="male" name="sexe" value='m' checked> <label for="homme">Male</label>
     <input type="radio" id="female" name="sexe" value='f'> <label for="femme">Female</label>
     <br>
 
