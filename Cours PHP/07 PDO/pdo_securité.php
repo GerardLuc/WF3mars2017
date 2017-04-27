@@ -27,7 +27,7 @@ if(!empty($_POST)){
 
     // 2 - Nous allons faire une injection SQL : dans le champ message, saisir ok'); DELETE FROM commentaire; (
     // Pour se prémunir des erreurs SQL et mettre les appostrophes, nous pouvons faire une requete préparée
-    $stmt = $pdo->prepare("INSERT INTO commentaire (pseudo, date_enregistrement, message) VALUES (:pseudo, NOW, :message) ");
+    $stmt = $pdo->prepare("INSERT INTO commentaire (pseudo, date_enregistrement, message) VALUES (:pseudo, NOW(), :message) ");
 
     $stmt->bindParam(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
     $stmt->bindParam(':message', $_POST['message'], PDO::PARAM_STR);
@@ -45,7 +45,7 @@ if(!empty($_POST)){
     <label for="pseudo">Pseudo</label><br>
     <input type="text" id="pseudo" name="pseudo" value=""><br><br>
 
-    <label for="pseudo">Pseudo</label><br>
+    <label for="pseudo">Message</label><br>
     <textarea name="message" id="message"></textarea><br><br>
     
     <input type="submit" name="envoi" value="envoi">
