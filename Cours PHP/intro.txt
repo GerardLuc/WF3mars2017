@@ -1,0 +1,7 @@
+PHP: Hypertext Processor
+
+Language de programmation de script
+Open source
+Situé coté serveur
+Spécifiquement concu pour le developpement de sites web
+

@@ -1,0 +1,1 @@
+<p>Ceci est le fichier d'inclusion. t'ahu comen c tro koule.</p>

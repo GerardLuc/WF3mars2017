@@ -1,0 +1,58 @@
+***********************************************
+requettes préparées de PHPmyAdmin (PMA)
+***********************************************
+
+Qu'est-ce que PHPMyAdmin :
+PMA est une interface d'administration pour le SGBD MySQL. Il est écrit en PHP et s'appuie sur le serveur HTTP APACHE (serveur web)
+
+XAMPP: 
+X: pour toutes les plateformes
+Apache
+MySQL
+PHP
+Pearl
+
+PMA permet d'administrer les elements suivants: 
+- Les BDD
+- Les tables et leur champs
+- Les indexs, les clés primaires et étrangeres
+- Les utilisateurs de la base et leur permissions
+- Exporter / importer des données dans divers formats
+
+Vous pourriez remplacer PMA par d'autres interfaces d'administration de BDD: DbNinja, SQL, Buddy, MyWebSQL, phpMiniAdmin...
+
+_____________________________
+
+Définition des Types de champ:
+    - INT pour nombre entier (taille max de 11 caracteres pour une valeur entre - 2 147 483 648 et 2 147 483 648).
+    - VARCHAR pour chaine de caractères de longueur variable (taille maxi 255 caracteres)
+    - TEXT pour chaine de caractères de longueur variable (taille maxi 65535 caracteres)
+    - DATE au format YYYY-MM-JJ
+    - DATETIME au format YYY-MM-JJ HH:ii:ss
+    -ENUM pour donner une liste de valeurs selon la syntaxe 'm', 'f'
+
+Definition des attiributs:
+ - Binary : pour rendre le champ sensible a la casse
+ - Unsigned: pas de chiffre négatif
+ - Unsigned Zerofill: pas de chiffre negatif + complete avec des 0 (exemple: "12" en INT(4) do,,era en base: "0012")
+
+
+_____________________________
+Import / export de base de données:
+
+- Via PHPMyAdmin: Avec les onglets "import" ou "export" correspondants.
+
+- En ligne de commande:
+Démarer > Executer > cmd
+
+Puis:
+
+- Pour faire un export de BDD:
+cd c:\xampp\mysql\bin
+mysqldump -u root entreprise > monFichier.sql
+
+- Pour faire un import en BDD:
+1° Créer une base de données d'acceuil: import_entreprise
+2° Mettre le fichier d'import dans le dossier par défaut c:\xampp\mysql\bin
+3° Saisir dans l'indice de commande:
+mysql -u root import_entreprise2 < monFichier.sql
