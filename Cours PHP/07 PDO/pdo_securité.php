@@ -20,7 +20,17 @@ $pdo = new PDO('mysql:host=localhost;dbname=dialogue', 'root', '', array(PDO::AT
 
 if(!empty($_POST)){
 
-    // .........
+    // 3. Traitement contre les failles XSS (injection JS) ou les injections CSS: on parle d'echappement des données recues
+    // Pour l'exemple on va injecter dans le champ message le code suivant: <style>body{display:none}</style>
+    // Pour un autre exemple on va injecter le code js suivant: 
+    // <script>while(true){alert('vous l'avez dans le cul XDDDD')}</script>
+
+    $_POST['pseudo'] = htlmspecialchars($_POST['pseudo'], ENT_QUOTES);
+    $_POST['message'] = htlmspecialchars($_POST['message'], ENT_QUOTES); // htmlspecialchars convertit les caracteres speciaux (', ", <, >, &') en entites html (par exemple > devient &lt;), ce qui permet de rendre innofensives les balises HTML. ENT_QUOTES ajoute les ' a la liste des caracteres convertis
+
+    // En complement : 
+    $_POST['message'] = strip_tags($_POST['message']); // Retire toutes les balises HTML contenues dans des balises HTML
+    // htmlentities() permet lui aussi de convertir les balises HTML en entites HTML
 
     // 1 - Nous allons faire une premiere requête qui n'est pas protégée contre les injections et qui n'accepte pas les apostrphes
     // $r = $pdo->query("INSERT INTO commentaire (pseudo, date_enregistrement, message) VALUES ('$_POST[pseudo]', NOW(), '$_POST[message]'  ) ");
