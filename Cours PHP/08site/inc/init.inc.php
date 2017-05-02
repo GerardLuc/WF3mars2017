@@ -13,7 +13,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=site', 'root', '', array(PDO::ATTR_E
 // Session
 session_start();
 // chemin du site
-define('RACINE_SITE', '/Cours%20PHP/08site/'); // indique le dossier dans lequel se situe le site sans 'localhost'
+define('RACINE_SITE', '/Cours PHP/08site/'); // indique le dossier dans lequel se situe le site sans 'localhost'
 
 // Déclaration des variables d'affichage du site
 $contenu = '';
