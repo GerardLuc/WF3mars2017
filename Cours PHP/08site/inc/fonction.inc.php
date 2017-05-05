@@ -56,10 +56,10 @@ function creationDuPanier(){
     if(!isset($_SESSION['panier'])){
         // S'il n'y a pas de panier dans session, on le crée
         $_SESSION['panier'] = array(); // Le panier est un array vide
-        $_SESSION['panier']['titre'] == array();
-        $_SESSION['panier']['id_produit'] == array();
-        $_SESSION['panier']['quantite'] == array();
-        $_SESSION['panier']['prix'] == array();
+        $_SESSION['panier']['titre'] = array();
+        $_SESSION['panier']['id_produit'] = array();
+        $_SESSION['panier']['quantite'] = array();
+        $_SESSION['panier']['prix'] = array();
     }
 }
 
@@ -79,4 +79,56 @@ function ajouterProduitDansPanier($titre, $id_produit, $quantite, $prix){ // Ces
         // Si le produit existe on ajoute la qtt nouvelle a la qtt deja existante dans le panier
         $_SESSION['panier']['quantite'][$position_produit] += $quantite;
     }
+}
+
+
+// -----------
+function montantTotal(){
+    $total = 0; // Contient le nombre de commande
+
+    for ($i = 0; $i < count($_SESSION['panier']['id_produit']); $i++){
+        // Tant que $i est inferieur au nombre de produits presents dans le panier, on additionne le prix fois la quantité:
+
+        $total += $_SESSION['panier']['quantite'][$i] * $_SESSION['panier']['prix'][$i]; // += pour ajouter la nouvelle valeur a l'ancienne sans l'ecraser
+    }
+
+    return round($total, 2); // On retourne le total arrondi a 2 decimales
+}
+
+// -----------------
+function retirerProduitDuPanier($id_produit_a_supprimer) {
+    // OOn cherche la position du produit dans le panier
+    $position_produit = array_search($id_produit_a_supprimer, $_SESSION['panier']['id_produit']); // array_search renvoie la position du produit (integer) sinon false s'il n'y est pas
+
+
+    if ($position_produit !== false){
+
+        if ($_SESSION['panier']['quantite']['$position_produit'] > 1){
+            $_SESSION['panier']['quantite']['$position_produit'] -= 1;
+        } else {
+            // si le produit est bien dans le panier, on coupe sa ligne
+            array_splice($_SESSION['panier']['titre'], $position_produit, 1); // efface la portion du tableau à partir de l'indice indiqué par $position_produit et sur une ligne
+
+            array_splice($_SESSION['panier']['id_produit'], $position_produit, 1);
+            array_splice($_SESSION['panier']['quantite'], $position_produit, 1);
+            array_splice($_SESSION['panier']['prix'], $position_produit, 1);
+        }
+    }
+}
+
+// ---------------------
+// EXERCICE
+// ---------------------
+// Creer une fonction qui retourne le nombre de produits differents dans le panier. Et afficher le resultat a coté du lien panier dans le menu de navigation. exemple: panier(3). Si le panier est vide, afficher panier(0)
+
+function quantiteProduit(){
+    if(isset($_SESSION['panier'])){
+        // return count ($_SESSION['panier']['titre']);
+        return array_sum($_SESSION['panier']['quantite']); // Array_sum additionne les valeurs situees a un incide
+    } else {
+        return 0;
+        echo 'TOTO'; // Apres un return les instructions ne sont pas executes
+    }
+    
+
 }

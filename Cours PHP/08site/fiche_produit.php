@@ -47,7 +47,7 @@ if (isset($_GET['id_produit'])){  // Si existe l'indice id_produit dans l'url
             $contenu .= '<form action="panier.php" method="post" class="form-group-sm form-control-static">';
                 $contenu .= '<input type="hidden" name="id_produit" value="'. $produit['id_produit'] .'" >';
 
-            $contenu .= '<select name="quantité" name="id_produit" value"'. $produit['id_produit'] .'">';
+            $contenu .= '<select name="quantite" name="id_produit" value"'. $produit['id_produit'] .'">';
                 for($i = 1; $i <= $produit['stock'] && $i <= 5; $i++){
                     $contenu .= "<option>$i</option>";
                 }
