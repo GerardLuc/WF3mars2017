@@ -562,7 +562,7 @@ echo '<h2>La boucle foreach pour parcourir les arrays</h2>';
 // Moyen simple depasser en revue un tableau.
 
 echo '<pre>'; print_r($tab);
-foreach($tab as $valeur) { // La variable $valeurrecupere a chaque tour de boucle les valeurs qui sont parcourus dans m'array tab.
+foreach($tab as $valeur) { // La variable $valeur recupere a chaque tour de boucle les valeurs qui sont parcourus dans m'array tab.
     echo $valeur. '<br>';
 }
 
