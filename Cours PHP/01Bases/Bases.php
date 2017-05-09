@@ -58,9 +58,9 @@ echo "$x $y <br>"; // On obtient le même resultat sans concaténation
 // ---------
 // Concaténation lors de l'affectaion:
 $prenom1 = 'Bruno'; // Déclaration de variable
-$prénom1 = 'Claire'; // Ici la variable claire écrase Bruno car déclarée apres
+$prenom1 = 'Claire'; // Ici la variable claire écrase Bruno car déclarée apres
 
-echo $prénom1 . '<br>'; // Affiche claire
+echo $prenom1 . '<br>'; // Affiche claire
 
 $prenom2 = 'Bruno '; 
 $prenom2 .= 'Claire'; // Ajoute a la valeur presente

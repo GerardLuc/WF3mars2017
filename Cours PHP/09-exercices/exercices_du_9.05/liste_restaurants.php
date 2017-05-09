@@ -3,13 +3,12 @@
 $contenu = '';
 $pdo = new PDO('mysql:host=localhost;dbname=restaurants', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
 
-query = $pdo->prepare('SELECT * FROM restaurant');
+$query = $pdo->prepare('SELECT * FROM restaurant');
 $query->execute();
 $contenu .= '<h1>Liste des restaurants</h1>
 			 <table border="1">';
 		$contenu .= '<tr>
 						<th>Nom</th>
-						<th>Prénom</th>
 						<th>Téléphone</th>
 						<th>Autres infos</th>
 					</tr>';
@@ -17,7 +16,6 @@ $contenu .= '<h1>Liste des restaurants</h1>
 while ($restaurants = $query->fetch(PDO::FETCH_ASSOC)){
 		$contenu .= '<tr>
 						<td>'. $restaurants['nom'] .'</td>
-						<td>'. $restaurants['prenom'] .'</td>
 						<td>'. $restaurants['telephone'] .'</td>
 						<td>
 							<a href="?id_restaurant='. $restaurants['id_restaurant'] .'">Plus d\'infos</a>
@@ -26,6 +24,28 @@ while ($restaurants = $query->fetch(PDO::FETCH_ASSOC)){
 	}			
 			
 $contenu .= '</table>';
+
+if(isset($_GET['id_restaurants'])){
+    $query = $pdo->prepare('SELECT * FROM restaurant WHERE id_restaurant = :id_restaurant');
+    $query->bindParam(':id_restaurant', $_GET['id_restaurant'], PDO::PARAM_INt);
+    $query->execute();
+
+    $restaurant = $query->fetch(PDO::FETCH_ASSOC);
+    if (!empty($restaurant)) {
+        $contenu .= '<p>Nom : '. $restaurant['nom'] .'</p>';
+		$contenu .= '<p>Téléphone : '. $restaurant['telephone'] .'</p>';
+		$contenu .= '<p>Adresse : '. $restaurant['adresse'] .'</p>';
+		$contenu .= '<p>Type : '. $restaurant['type'] .'</p>';
+		$contenu .= '<p>Note : '. $restaurant['note'] .'</p>';
+		$contenu .= '<p>Avis : '. $restaurant['avis'] .'</p>';
+
+    }
+
+
+} else {
+    $contenu .= <p>ce restaurant n\'existe pas</p>';
+}
+
 
 
 
