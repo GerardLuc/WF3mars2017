@@ -35,7 +35,7 @@ if(!empty($_POST)){
 		$contenu .= '<p>Le nom doit comporter au moins 2 caractères</p>';
 	}
 
-	if (strlen($_POST['adresse']) < 0 || strlen($_POST['prenom']) > 255){
+	if (strlen($_POST['adresse']) < 0 || strlen($_POST['adresse']) > 255){
 		$contenu .= '<p>L\'adresse doit etre remplie</p>';
 	}
 

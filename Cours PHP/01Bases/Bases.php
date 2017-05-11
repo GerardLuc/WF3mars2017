@@ -174,7 +174,7 @@ echo ($a == 10) ? '$a est egal a 10 <br>' : '$a est different de 10 <br>'; // ? 
 $vara = 1; // Integer
 $varb = '1'; // String
 
-if ( $vara == $varb){
+if ($vara == $varb){
     echo' il y a egalité entre les 2 variables <br>';
 }
 
