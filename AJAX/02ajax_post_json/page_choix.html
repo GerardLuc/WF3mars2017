@@ -1,0 +1,74 @@
+<!--
+    faire une page avec un champ select qui permet de choisir un prenom
+    mettre en place une requete ajax qui recupere le prenom choisi pour le passer dans les parametres
+    et afficher la reponse dans notre page
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ajax et Json</title>
+        <style>
+            form{ width:10%; margin: 0;}
+            select, input{ padding: 5px; width:100%;}
+        </style>
+    </head> 
+    <body>
+       <form id=form_choix>
+           <label>choisissez un prenom</label>
+           <select id="choix" method="post">
+               <option>daniel</option>
+               <option>julien</option>
+               <option>fabrice</option>
+               <option>stephanie</option>
+               <option>damien</option>
+               <option>thomas</option>
+               <option>laura</option>
+               <option>jean-pierre</option>
+               <option>thierry</option>
+               <option>emilie</option>
+               <option>celine</option>
+               <option>melanie</option>
+               <option>chloe</option>
+               <option>guillaume</option>
+               <option>nathalie</option>
+               <option>benoit</option>
+               <option>mathieu</option>
+               <option>amandine</option>
+           </select>
+           <br>
+           <br>
+           <input type="submit" value="valider">
+       </form>
+       <div id="resultat"></div>
+
+        <script>
+            function ajax(){
+                var file ="ajax.php"; // Declaration de la page cible
+                r = new XMLHttpRequest();
+                var choix = document.getElementById("choix")
+                choix = choix.innerHTML;
+                // console.log(choix);
+                var parametres = "prenom="+choix;
+
+                r.open("POST", file, true);
+                r.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                // La methode setRequestHeader() definit la valeur d'un header http
+                // Vous devez appeler cette methode entre la methode open() et send()
+
+                r.onreadystatechange = function(){
+                    if(r.readyState == 4 && r.status == 200){
+                        console.log(r.responseText);
+                        var obj = JSON.parse(r.responseText);
+                        // La methode parse de l'objet JSON permet d'evaluer la reponse et d'en faire un objet.
+                        document.getElementById("resultat").innerHTML = obj.resultat;
+                    }
+
+                }
+                r.send(parametres); // envoi
+            }
+            
+        </script>
+    </body>
+</html>

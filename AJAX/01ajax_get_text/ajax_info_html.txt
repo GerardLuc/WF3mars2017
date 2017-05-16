@@ -1,0 +1,2 @@
+<h1>NOUVEAU TITRE</h1>
+<button type="button" id="action2">Changer titre</button>
