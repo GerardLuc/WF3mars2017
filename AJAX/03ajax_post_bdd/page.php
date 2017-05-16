@@ -21,7 +21,7 @@
         </style>
     </head>
     <body>
-        <form action="mon_form">
+        <form id="mon_form">
             <label>prenom</label>
             <select id="choix">
                 <?php
