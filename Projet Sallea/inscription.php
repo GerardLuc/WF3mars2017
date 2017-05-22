@@ -45,7 +45,7 @@ if(!empty($_POST)){ // Si le formulaire est posté
         
         $_POST['mdp'] = md5($_POST['mdp']); // Permet d'encrypter le mdp selon l'algorythme md5. Il faudra le faire aussi sur la page de connexion pour comparer 2 mots cryptés
 
-        executeRequete("INSERT INTO membre (pseudo, mdp, nom, prenom, email, civilite) VALUES(:pseudo, :mdp, :nom, :prenom, :email, :civilite 0) ", array(':pseudo' => $_POST['pseudo'], ':mdp' => $_POST['mdp'], ':nom' => $_POST['nom'], ':prenom' => $_POST['prenom'], ':email' => $_POST['email'], ':civilite' => $_POST['civilite']]));
+        executeRequete("INSERT INTO membre (pseudo, mdp, nom, prenom, email, civilite) VALUES(:pseudo, :mdp, :nom, :prenom, :email, :civilite 0) ", array(':pseudo' => $_POST['pseudo'], ':mdp' => $_POST['mdp'], ':nom' => $_POST['nom'], ':prenom' => $_POST['prenom'], ':email' => $_POST['email'], ':civilite' => $_POST['civilite']));
 
         $contenu .= '<p>Vous etes inscrit. <a href="connexion.php">Cliquez ici pour vous connecter</a></p>';
         $inscription = true; // Pour ne plus afficher le formulaire d'inscription
@@ -87,4 +87,4 @@ if(!$inscription):  // Si membre non inscrit ($inscription va etre false), on af
 
 <?php
 endif; // Syntaxe du if avec ";" qui remplace la premiere accolade et "endif" qui remplace la seconde
-require_once('inc/bas.footer.php');
+require_once('inc/footer.inc.php');

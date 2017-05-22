@@ -13,3 +13,4 @@ $contenu_droite = '';
 
 // Autres inclusions
 require_once('fonction.inc.php');
+?>
