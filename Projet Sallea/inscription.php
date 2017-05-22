@@ -58,7 +58,7 @@ if(!empty($_POST)){ // Si le formulaire est posté
 
 
 // ---------------------- AFFICHAGE ---------------------
-require_once('inc/haut.inc.php');
+require_once('inc/header.inc.php');
 echo $contenu; // Affiche les messages du site
 
 if(!$inscription):  // Si membre non inscrit ($inscription va etre false), on affiche le formulaire
@@ -87,4 +87,4 @@ if(!$inscription):  // Si membre non inscrit ($inscription va etre false), on af
 
 <?php
 endif; // Syntaxe du if avec ";" qui remplace la premiere accolade et "endif" qui remplace la seconde
-require_once('inc/bas.inc.php');
+require_once('inc/bas.footer.php');
