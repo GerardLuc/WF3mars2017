@@ -9,28 +9,28 @@ $inscription = false; // Variable qui permet de savoir si le membre est inscrit,
 if(!empty($_POST)){ // Si le formulaire est posté
     // Validation du formulaire
     if(strlen($_POST['pseudo']) < 4 || strlen ($_POST['pseudo']) >20){
-        $contenu .= '<p>Le pseudo doit contenir entre 4 et 20 caracteres</p>';
+        $contenu .= '<div class="bg-danger">Le pseudo doit contenir entre 4 et 20 caracteres</div>';
     }
 
     if(strlen($_POST['mdp']) < 4 || strlen ($_POST['mdp']) >20){
-        $contenu .= '<p>Le mot de passe doit contenir entre 4 et 20 caracteres</p>';
+        $contenu .= '<div class="bg-danger">Le mot de passe doit contenir entre 4 et 20 caracteres</div>';
     }
 
     if(strlen($_POST['nom']) < 2 || strlen ($_POST['nom']) >20){
-        $contenu .= '<p>Le nom doit contenir entre 2 et 20 caracteres</p>';
+        $contenu .= '<div class="bg-danger">Le nom doit contenir entre 2 et 20 caracteres</div>';
     }
 
     if(strlen($_POST['prenom']) < 2 || strlen ($_POST['prenom']) >20){
-        $contenu .= '<p>Le prenom doit contenir entre 2 et 20 caracteres</p>';
+        $contenu .= '<div class="bg-danger">Le prenom doit contenir entre 2 et 20 caracteres</div>';
     }
 
     if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) >20){
-        $contenu .= '<p>L\'Email est invalide</p>';
+        $contenu .= '<div class="bg-danger">L\'Email est invalide</div>';
     }
     // Filter_var() permet de valider des formats de chaines de caracteres pourverifier qu'il s'agit ici d'email (on pourrait valider une URL par exemple)
 
     if($_POST['civilité'] != 'm' && $_POST['civilité'] != 'f'){
-        $contenu .= '<p>La civilité est incorrecte</p>';
+        $contenu .= '<div class="bg-danger">La civilité est incorrecte</div>';
     }
 
     // Si aucune erreur n'est retenue c'est qu'il n'y a pas d'erreur
@@ -39,7 +39,7 @@ if(!empty($_POST)){ // Si le formulaire est posté
         $membre = executeRequete("SELECT id_membre FROM membre WHERE pseudo = :pseudo", array(':pseudo'=> $_POST['pseudo']));
     
     if ($membre->rowCount() > 0){
-        $contenu .= '<p>Le pseudo est indisponible : veuillez en choisir un autre</p>';
+        $contenu .= '<div class="bg-danger">Le pseudo est indisponible : veuillez en choisir un autre</div>';
     } else {
         // si le pseudo est unique, on peut faire l'inscription en bdd
         
@@ -47,7 +47,7 @@ if(!empty($_POST)){ // Si le formulaire est posté
 
         executeRequete("INSERT INTO membre (pseudo, mdp, nom, prenom, email, civilite) VALUES(:pseudo, :mdp, :nom, :prenom, :email, :civilite 0) ", array(':pseudo' => $_POST['pseudo'], ':mdp' => $_POST['mdp'], ':nom' => $_POST['nom'], ':prenom' => $_POST['prenom'], ':email' => $_POST['email'], ':civilite' => $_POST['civilite']));
 
-        $contenu .= '<p>Vous etes inscrit. <a href="connexion.php">Cliquez ici pour vous connecter</a></p>';
+        $contenu .= '<div class="bg-danger">Vous etes inscrit. <a href="connexion.php">Cliquez ici pour vous connecter</a></div>';
         $inscription = true; // Pour ne plus afficher le formulaire d'inscription
 
         } // Fin du else ($membre->rowCount() > 0)

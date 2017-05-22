@@ -19,11 +19,11 @@
                 if(!empty($_POST)){
                     //contrôle de formulaire:
                     if(empty($_POST['pseudo'])){
-                        $contenu .= '<p>Le pseudo est requis</p>';
+                        $contenu .= '<div class="bg-danger">Le pseudo est requis</div>';
                     }
 
                     if(empty($_POST['mdp'])){
-                        $contenu .= '<p>Le mot de passe est requis</p>';
+                        $contenu .= '<div class="bg-danger">Le mot de passe est requis</div>';
                     }
 
                     // Si le formulaire est correct, on controle les identifiants :
@@ -44,7 +44,7 @@
                         }
                         else{
                             // Si les identifiants ne correspondent pas, on affiche un message d'erreur :
-                            $contenu .= '<p>Erreur sur les identifiants</p>';
+                            $contenu .= '<div class="bg-danger">Erreur sur les identifiants</div>';
                         }
                     }// Fin de if(empty($contenu))
                 } // Fin de if(!empty($_POST))
