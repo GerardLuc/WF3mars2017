@@ -10,42 +10,42 @@
             exit();
         }
 
-    // 7- Suppression d'un produit
-        if(isset($_GET['action']) && $_GET['action'] == 'suppression' && isset($_GET['id_produit'])){
+    // 7- Suppression d'un commande
+        if(isset($_GET['action']) && $_GET['action'] == 'suppression' && isset($_GET['id_commande'])){
 
             $resultat = executeRequete("SELECT * FROM commande WHERE id_commande = :id_commande", array(':id_membre' => $_GET['id_membre']));
             $avis_a_supprimer = $resultat->fetch(PDO::FETCH_ASSOC); 
 
             // Puis suppression de l'avis en BDD :
-            executeRequete("DELETE FROM produit WHERE id_produit = :id_produit", array(':id_produit' => $_GET['id_produit']));
-            $contenu .= '<div class="bg_success">Le produit a été supprimé !</div>';
+            executeRequete("DELETE FROM commande WHERE id_commande = :id_commande", array(':id_commande' => $_GET['id_commande']));
+            $contenu .= '<div class="bg_success">Le commande a été supprimée !</div>';
             $_GET['action'] = 'affichage'; // Pour lancer l'affichage des membre dans le tableau HTML (point 6)
         }
 
-    // 4- Enregistrement du produit en BDD
+    // 4- Enregistrement du commande en BDD
 
         if($_POST){ // Equivalent à !empty($_POST) car si le $_POST est rempli, il vaut TRUE = formulaire posté
    
             // 4- Suite de l'enregistrement en BDD :
-            executeRequete("REPLACE INTO produit (id_produit, id_membre, id_salle, commentaire)VALUES(:id_produit, :id_membre, :id_salle)", array('id_produit' => $_POST['id_produit'], 'id_membre' => $_POST['id_membre'], 'id_salle' => $_POST['id_salle'], 'commentaire' => $_POST['commentaire'], 'nom' => $_POST['nom']));
+            executeRequete("REPLACE INTO commande (id_commande, id_membre, id_produit, commentaire)VALUES(:id_commande, :id_membre, :id_produit)", array('id_commande' => $_POST['id_commande'], 'id_membre' => $_POST['id_membre'], 'id_produit' => $_POST['id_produit'], 'commentaire' => $_POST['commentaire'], 'nom' => $_POST['nom']));
 
-            $contenu .='<div class="bg-success">L\'produit a été enregistré</div>';
-            $_GET['action'] = 'affichage'; // On met la valeur 'affichage' dans $_GET['action'] pour affcher automatiquement la table HTML des produits plus loin dans le script (point 6)
+            $contenu .='<div class="bg-success">L\'commande a été enregistré</div>';
+            $_GET['action'] = 'affichage'; // On met la valeur 'affichage' dans $_GET['action'] pour affcher automatiquement la table HTML des commandes plus loin dans le script (point 6)
         } 
 
-    // 2- Les liens "affichage" et "ajout d'un produit" :
+    // 2- Les liens "affichage" et "ajout d'un commande" :
 
         $contenu .='<ul class="nav nav-tabs">
-                        <li><a href="?action=affichage">Affichage des produit</a></li>
-                        <li><a href="?action=ajout">Ajout d\'un produit</a></li>
+                        <li><a href="?action=affichage">Affichage des commande</a></li>
+                        <li><a href="?action=ajout">Ajout d\'une commande</a></li>
                     </ul>';
   
-    // 6- Affichage des produits dans le back-office :
+    // 6- Affichage des commandes dans le back-office :
         if(isset($_GET['action']) && $_GET['action'] == 'affichage' || !isset($_GET['action'])) {
             // Si $_GET contient affichage ou que l'on arrive sur l apage la 1ere fois ($_GET['action'] n'existe pas)
-            $resultat = executeRequete("SELECT * FROM produit"); // On sélectionne tous les produit
-            $contenu .= '<h3>Affichage des produit</h3>';
-            $contenu .= '<p>Nombre d\'produit :'. $resultat->rowCount() . '</p>';
+            $resultat = executeRequete("SELECT * FROM commande"); // On sélectionne tous les commande
+            $contenu .= '<h3>Affichage des commande</h3>';
+            $contenu .= '<p>Nombre d\'commande :'. $resultat->rowCount() . '</p>';
 
             $contenu .= '<table class="table">';
                 // La ligne des entêtes
@@ -66,8 +66,8 @@
                                 $contenu .= '<td>' . $data . '</td>';
                         }
                         $contenu .= '<td>
-                                        <a href="?action=modification&id_produit='. $ligne['id_produit'] .'">modifier</a> /
-                                        <a href="?action=suppression&id_produit='. $ligne['id_produit'] .'"onclick="return(confirm(\'Etes-vous certain de vouloir supprimer cet produit ?\'));">supprimer</a>
+                                        <a href="?action=modification&id_commande='. $ligne['id_commande'] .'">modifier</a> /
+                                        <a href="?action=suppression&id_commande='. $ligne['id_commande'] .'"onclick="return(confirm(\'Etes-vous certain de vouloir supprimer cet commande ?\'));">supprimer</a>
                                     </td>';
                     $contenu .= '</tr>';
                 }
@@ -81,52 +81,34 @@
     // 3- Formulaire  HTML
 
         if(isset($_GET['action']) && ($_GET['action'] == 'ajout' || $_GET['action'] == 'modification' )) :
-        // Si on a demandé l'ajout d'un produit ou sa modification, on affiche le formulaire :
+        // Si on a demandé l'ajout d'un commande ou sa modification, on affiche le formulaire :
 
             // 8- Formulaire de modification avec présaisie des infos dans le formulaire :
-            if(isset($_GET['id_produit'])){
-                // Pour préremplir le formulaire, on requête en BDD les infos de produit passé dans l'URL:
-                $resultat = executeRequete("SELECT a.id_produit, a.note, a.date_enregistrement, a.commentaire, m.id_membre, m.email, s.id_salle, s.titre
-                                            FROM produit a
-                                            INNER JOIN membre m
-                                            ON a.id_membre = m.id_membre
-                                            INNER JOIN salle s
-                                            ON a.id_salle = s.id_salle
-                                            WHERE id_produit = :id_produit", array(':id_produit' => $_GET['id_produit']));
+            if(isset($_GET['id_commande'])){
+                // Pour préremplir le formulaire, on requête en BDD les infos de commande passé dans l'URL:
+                $resultat = executeRequete("SELECT * FROM commande WHERE id_commande = :id_commande", array(':id_commande' => $_GET['id_commande']));
 
-                $produit_actuel= $resultat->fetch(PDO::FETCH_ASSOC); // pas de while car un seul produit
+                $commande_actuel= $resultat->fetch(PDO::FETCH_ASSOC); // pas de while car un seul commande
             }
 ?>
 
-<h3>Formulaire d'ajout ou de modification d'un produit</h3>
+<h3>Formulaire d'ajout ou de modification d'un commande</h3>
 <form method="post" enctype="multipart/form-data" action=""> <!-- "multipart/form-data" permet d'uploader un fichier et de générer une superglobale $_FILES -->
-    <input type="hidden" id="id_produit" name="id_produit" value="<?php echo $produit_actuel['id_produit']?? 0;?>"> <!-- champ caché qui récetionne l'id_produit nécessaire lors de la modification d'un membre existant -->
+    <input type="hidden" id="id_commande" name="id_commande" value="<?php echo $commande_actuel['id_commande']?? 0;?>"> <!-- champ caché qui récetionne l'id_commande nécessaire lors de la modification d'un membre existant -->
 
 
     
-    <label for="id_produit">id_produit</label><br>
-    <input type="text" id="id_produit" name="id_produit" value="<?php echo $produit_actuel['id_produit']?? '';?>"><br>
+    <label for="id_commande">id_commande</label><br>
+    <input type="text" id="id_commande" name="id_commande" value="<?php echo $commande_actuel['id_commande']?? '';?>"><br>
     
     <label for="id_membre">id_membre</label><br>
-    <input type="text" id="id_membre" name="id_membre" value="<?php echo $produit_actuel['id_membre']?? ''; ?>"><br>
+    <input type="text" id="id_membre" name="id_membre" value="<?php echo $commande_actuel['id_membre']?? ''; ?>"><br>
 
-    <label for="email">email</label><br>    
-    <input type="text" id="email" name="email" value="<?php echo $produit_actuel['email']?? ''; ?>"><br>
-
-    <label for="id_salle">id_salle</label><br>
-    <input type="text" id="id_salle" name="id_salle" value="<?php echo $produit_actuel['id_salle']?? ''; ?>"><br>
-
-    <label for="titre">titre</label><br>    
-    <input type="text" id="titre" name="titre" value="<?php echo $produit_actuel['titre']?? ''; ?>"><br>
-
-    <label for="commentaire">commentaire</label><br>
-    <input type="text" id="commentaire" name="commentaire" value="<?php echo $produit_actuel['commentaire']?? '';?>"><br><br>
-
-    <label for="note">note</label><br>
-    <p value="<?php echo $produit_actuel['note']?? '';?>"></p><br>
+    <label for="id_produit">id_produit</label><br>
+    <input type="text" id="id_produit" name="id_produit" value="<?php echo $commande_actuel['id_produit']?? ''; ?>"><br>
 
     <label for="date_enregistrement">Date d'enregistrement</label><br>
-    <p value="<?php echo $produit_actuel['date_enregistrement']?? '';?>"></p><br>
+    <p value="<?php echo $commande_actuel['date_enregistrement']?? '';?>"></p><br>
 
     <input type="submit" value="enregister" class="btn"><br><br>
 
