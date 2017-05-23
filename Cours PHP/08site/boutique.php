@@ -14,12 +14,11 @@ $contenu_gauche .= '<div class="list-group">';
     while($cat = $categorie_des_produits->fetch(PDO::FETCH_ASSOC)){
         // echo '<pre>'; . print_r($cat) . '</pre>';
         $contenu_gauche .= '<a href="?catégorie='. $cat['categorie'] .'" class="list-group-item">'. $cat['categorie'] .'</a>';
-
     }
 
 $contenu_gauche .= '</div>';
 
-// 2. Affichage des produits sselon la catégorie choisie:
+// 2. Affichage des produits selon la catégorie choisie:
 if (isset($_GET['categorie']) && $_GET['categorie'] != 'all' ){
     // si on a choisi une categorie autre que "all" :
     $donnees = executeRequete("SELECT id_produit, reference, titre, photo, prix, description FROM produit WHERE categorie = :categorie",array(':categorie' => $_GET['categorie']));

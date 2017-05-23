@@ -51,7 +51,7 @@
 
         //-------------------- AFFICHAGE ---------------------- 
 
-    require_once('inc/haut.inc.php');
+    require_once('inc/header.inc.php');
     echo $contenu;
 ?>
 
@@ -65,7 +65,7 @@
 
     <input type="submit" value="se connecter" class="btn">
 <?php
-    require_once('inc/bas.inc.php');
+    require_once('inc/footer.inc.php');
 
 
 
