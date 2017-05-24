@@ -27,7 +27,7 @@
         if($_POST){ // Equivalent à !empty($_POST) car si le $_POST est rempli, il vaut TRUE = formulaire posté
    
             // 4- Suite de l'enregistrement en BDD :
-            executeRequete("REPLACE INTO commande (id_commande, id_membre, id_produit, commentaire)VALUES(:id_commande, :id_membre, :id_produit)", array('id_commande' => $_POST['id_commande'], 'id_membre' => $_POST['id_membre'], 'id_produit' => $_POST['id_produit'], 'commentaire' => $_POST['commentaire'], 'nom' => $_POST['nom']));
+            executeRequete("REPLACE INTO commande (id_commande, id_membre, id_produit, date_enregistrement)VALUES(:id_commande, :id_membre, :id_produit)", array('id_commande' => $_POST['id_commande'], 'id_membre' => $_POST['id_membre'], 'id_produit' => $_POST['id_produit'], 'date_enregistrement' => $_POST['date_enregistrement']));
 
             $contenu .='<div class="bg-success">L\'commande a été enregistré</div>';
             $_GET['action'] = 'affichage'; // On met la valeur 'affichage' dans $_GET['action'] pour affcher automatiquement la table HTML des commandes plus loin dans le script (point 6)
