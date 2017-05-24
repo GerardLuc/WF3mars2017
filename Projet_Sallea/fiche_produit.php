@@ -9,8 +9,8 @@
 
     if (isset($_GET['id_salle'])){ // Si existe l'indicee id-produit dans l'URL
         // On requête en base le produit demandé pour vérifier son existence :
-        $resultat = executeRequete("SELECT * FROM salle 
-                                    INNER JOIN produit 
+        $resultat = executeRequete("SELECT s.*, p.prix FROM salle s
+                                    INNER JOIN produit p
                                     ON s.id_salle = p.id_salle 
                                     WHERE id_salle = :id_salle", 
                                     array(':id_salle'=> $_GET['id_salle']));

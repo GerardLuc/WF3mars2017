@@ -19,7 +19,11 @@
         // 2-Affichage des salles selon la catégorie choisie :
         if(isset($_GET['categories']) && $_GET['categories'] != 'all'){
             // Si on choisi une catégorie autre que "all" :
-            $donnees = executeRequete("SELECT * FROM salle WHERE categories = :categories",array(':categories' => $_GET['categories']));
+            $donnees = executeRequete("SELECT s.*, p.prix FROM salle s
+                                        INNER JOIN produit p
+                                        ON s.id_salle = p.id_salle 
+                                        WHERE categories = :categories",
+                                        array(':categories' => $_GET['categories']));
         }
         else{
             // Sinon si on a demandé toutes les catégories :
