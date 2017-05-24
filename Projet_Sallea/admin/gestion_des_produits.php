@@ -106,7 +106,7 @@
 
             if (isset($_GET['action']) && $_GET['action'] == 'affichage' || !isset($_GET['action'])){ // si $_GET contient affichage ou que l'on arrive sur la page la 1er fois.
 
-                $resultat = executeRequete("SELECT * FROM salle");  // on séléctionne tous les salles 
+                $resultat = executeRequete("SELECT p.id_produit, p.date_arrivee, p.date_depart, s.id_salle, s.description, s.photo, p.prix, p.etat FROM produit p INNER JOIN salle s ON p.id_salle = s.id_salle ");  // on séléctionne tous les salles 
 
                 $contenu .= '<h3>Affichage des salles</h3>';
 
@@ -135,7 +135,7 @@
                                    }else{
                                        $contenu .= '<td>' . $data . '</td>';
                                     }   
-                                } 
+                                }
                             $contenu .= '<td>
                                             <a href="?action=modification&id_salle='. $ligne['id_salle'] . '">Modifier</a> /
                                             <a href="?action=suppression&id_salle='. $ligne['id_salle'] . '"onclick="return(confirm(\'etes vous certains de vouloir supprimer ce produit ? \'));">Supprimer</a>
@@ -181,24 +181,26 @@
 
                 <input type="hidden" id="id_produit" name="id_produit" value="<?php echo $produit['id_produit'] ?? 0; ?>"> <!-- champ caché qui récetionne l'id_produit nécessaire lors de la modification d'un produit existant -->
 
-                <label for="id_salle">id_salle</label><br>
-                <input id="id_salle" name="id_salle" value="<?php echo $produit ['id_salle'] ?? ''; ?>"><br>
-
                 <label for="date_arrivee">date d'arrivee</label><br>
                 <input id="date_arrivee" name="date_arrivee" value="<?php echo $produit ['date d\'arrivee'] ?? ''; ?>"><br>
 
                 <label for="date_depart">date de depart</label><br>
                 <input id="date_depart" name="date_depart" value="<?php echo $produit ['date de depart'] ?? ''; ?>"><br>
 
-                <label for="prix">prix</label><br>
+                <label for="salle">Salle</label><br>
+                <select name="salle" id="salle">
+                    <?php
+                        while ($ligne = $resultat->fetch(PDO::FETCH_ASSOC)) {
+                          echo '<option value="'.$ligne['id_salle'].'">'.$ligne['id_salle']. '-'.$ligne['titre']. '-'.$ligne['adresse'].'-'.$ligne['capacité'] .'</option>';
+                            
+                        }
+                    ?>
+                </select><br>
+
+                <label for="prix">tarif</label><br>
                 <input id="prix" name="prix" value="<?php echo $produit ['prix'] ?? ''; ?>"><br>
 
-                <label>Etat</label><br>
-                <select name="etat">
-                    <option value="libre"  <?php if(isset($salle['etat'])&& $salle['etat'] == 'libre') echo 'selected '?>>libre</option>
-                    <option value="reservation"  <?php if(isset($salle['etat'])&& $salle['etat'] == 'reservation') echo 'selected '?>>Reservé
-                    </option>
-                </select><br><br>
+
              
                 <input type="submit" value="enregistrer" class="btn"><br><br>
 
