@@ -27,7 +27,10 @@
         }
         else{
             // Sinon si on a demandé toutes les catégories :
-            $donnees = executeRequete("SELECT s.*, p.prix FROM salle s INNER JOIN produit p ON s.id_salle = p.id_salle "); // Pas de clause WHERE car on veut toutes les catégorie
+            $donnees = executeRequete("SELECT s.*, p.prix 
+                                        FROM salle s 
+                                        INNER JOIN produit p 
+                                        ON s.id_salle = p.id_salle "); // Pas de clause WHERE car on veut toutes les catégorie
         }
 
         while($salle = $donnees->fetch(PDO::FETCH_ASSOC)){
