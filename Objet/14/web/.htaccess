@@ -1,0 +1,8 @@
+#activation de la réécriture d'url
+
+RewriteEngine on
+
+# Si on apelle un fichier qui n'existe pas
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^index.php [QSA,L]

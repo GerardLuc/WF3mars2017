@@ -1,0 +1,65 @@
+Arborecence:
+    app/ : Configuration de l'app
+    src/ : code php et html specifique a notre projet
+    vendor/ : code general de l'application et les entites
+    web/ : Repertoire web racine. Le point d'entrée de notre application.
+
+
+---------------------------------
+
+
+app/
+    Config/
+        parameters.php : 
+        contient toutes les içinformations de connexion a la bdd...et autre parametres
+        
+    Config.php :
+    Contient l'inclusion des parametres de connexion a la bdd, et les retourne dans une methode getParametersConnect
+
+vendor/
+    autoload.php :
+    permet d'inclure les bons fichiers lors d'un 'new' (instanciation)
+    Attention: seuls les controllers sont dans le dossier SRC, il faut donc preciser que si le namespace n'est pas 'controller' almors les fichiers sont dans vendor.
+    Autre subtilité; le controller general (Controller\Controller) est egalement dans vendor
+
+    Entity/
+        Produit.php, Membre.php, Commande.php
+        Classes qui contiennent toutes les ppts de nos entites et getters et les setters. POPO (Plain Old Php Object)
+
+web/
+    index.php
+    Clé d'entrée de notre application (SILEX: index.php / Symfony app/php)
+
+vendor/
+    Manager/
+        PDOManager.php:
+        Cette classe represente la connexion a la, BDD. Elle contient et nous retourne notre objet PDO grace auquel nous pourrons affecter les requetes. 
+        Cette classe est un singleton. Cela signifie qu'il ne peut y avopir qu'un seul objet issu de cette classe.
+
+        EntityRepository.php
+        Un repository centralise tout ce qui touche a la bdd et la recuperation des entites.Concretement il ne doit pas y avoir de requetes ailleurs que dans un repository.
+
+    Repository
+        ProduitRepository.php:
+        Ce fichier contiendra toutes les fonctions liées a l'entité produit, demandera a EntityRepository de faire certaines requetes. Et si l'entité a besoin de requetes spécifiques, elles seron codées ici.
+
+    Controller.
+        Controller.php
+        C'esdt le controlleur de l'application. Il a deux missions: 
+        1/ Recuperer le repository correspondant a l'entité dans laquelle je suis:
+        getRepository
+        2/ Afficher la vue correspondant a l'action: render
+
+src/
+    Controller/
+        ProduitController.php
+        Cette classe hérite du controlleur général de l'application, et permet de déclencher toutes les actions liées a l'entité produit.
+        
+View/  
+    Produit/
+        FicheProduit.php, boutique.php, categorie.php
+        
+
+    ayout.html
+    Page générale, template de base.
+    
